@@ -7,7 +7,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { HeaderService } from './header.service';
+import { HeaderService } from './service/header.service';
 import { AuteursComponent } from './auteurs/auteurs.component';
 import { AuteurComponent } from './auteur/auteur.component';
 import { AjoutlivreComponent } from './ajoutlivre/ajoutlivre.component';
