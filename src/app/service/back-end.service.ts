@@ -21,7 +21,7 @@ export class BackEndService {
   Login(identifiantsVm: IdentifiantsVM): Observable<any>
   {
     console.log(identifiantsVm);
-    return this.http.post<IdentifiantsVM>("http://localhost:8080/connexion", identifiantsVm, httpOptions)
+    return this.http.post<IdentifiantsVM>("http://localhost:8080/ProjetFormation/connexion", identifiantsVm, httpOptions)
     .pipe(      
       retry(3),
       catchError(this.handleError)
