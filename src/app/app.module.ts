@@ -19,8 +19,8 @@ import { ModifmembreComponent } from './modifmembre/modifmembre.component';
 import { BibliothequesComponent } from './bibliotheques/bibliotheques.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { LivreComponent } from './livre/livre.component';
-import { GestionlivresComponent } from './gestionlivres/gestionlivres.component';
-import { GestionmembresComponent } from './gestionmembres/gestionmembres.component';
+// import { GestionlivresComponent } from './gestionlivres/gestionlivres.component';
+// import { GestionmembresComponent } from './gestionmembres/gestionmembres.component';
 
 
 @NgModule({
@@ -39,9 +39,9 @@ import { GestionmembresComponent } from './gestionmembres/gestionmembres.compone
     ModifmembreComponent,
     BibliothequesComponent,
     InscriptionComponent,
-    LivreComponent,
-    GestionlivresComponent,
-    GestionmembresComponent
+     LivreComponent//,
+    // GestionlivresComponent,
+    // GestionmembresComponent
   ],
   imports: [
     BrowserModule,
