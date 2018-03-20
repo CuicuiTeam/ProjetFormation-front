@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -7,7 +9,6 @@ import { AppRoutingModule } from './/app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { HeaderService } from './service/header.service';
 import { AuteursComponent } from './auteurs/auteurs.component';
 import { AuteurComponent } from './auteur/auteur.component';
 import { AjoutlivreComponent } from './ajoutlivre/ajoutlivre.component';
@@ -22,6 +23,9 @@ import { LivreComponent } from './livre/livre.component';
 import { MessagesComponent } from './messages/messages.component';
 // import { GestionlivresComponent } from './gestionlivres/gestionlivres.component';
 // import { GestionmembresComponent } from './gestionmembres/gestionmembres.component';
+import { BackEndService } from './service/back-end.service';
+import { MessagesService } from './service/messages.service';
+import { DatashareService } from './service/datashare.service';
 
 
 @NgModule({
@@ -47,9 +51,11 @@ import { MessagesComponent } from './messages/messages.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [HeaderService],
+  providers: [BackEndService, MessagesService, DatashareService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
