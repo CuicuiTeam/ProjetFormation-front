@@ -1,0 +1,53 @@
+<form name="creerlivre" modelAttribute="livre" class="form-horizontal">
+    <fieldset>
+        <legend>Ajouter un livre</legend>
+        <div class="form-group">
+            <label class="control-label col-lg-2" for="titre">Titre</label>
+            <div class="col-lg-10">
+                <input id="titre" type="text" required="required" class="form-control" name="titre" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-lg-2" for="description">Description</label>
+            <div class="col-lg-10">
+                <input id="description" type="text" required="required" class="form-control" name="description" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-lg-2" for="prix">Prix</label>
+            <div class="col-lg-10">
+                <input id="prix" type="text" required="required" class="form-control" name="prix" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-lg-2" for="date">Date de
+                publication</label>
+            <div class="col-lg-10">
+                <input id="date" type="date" required="required" class="form-control" name="datePublication" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-lg-2" for="image">Image</label>
+            <div class="col-lg-10">
+                <input id="image" type="text" required="required" class="form-control" name="imagePath" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-lg-2" for="populaire">Recommande</label>
+            <div class="col-lg-10">
+                <input type="checkbox" id="populaire" name="isPopular" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-lg-2" for="periodique">Periodique</label>
+            <div class="col-lg-10">
+                <input type="checkbox" id="periodique" name="isPeriodic" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <input type="submit" name="btnAddexit" class="btn btn-primary" value="Créer le livre" />
+            </div>
+        </div>
+    </fieldset>
+</form>

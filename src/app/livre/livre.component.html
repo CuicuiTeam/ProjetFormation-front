@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1 style="text-align: center">{{livre.titre}}</h1>
+        <p style="text-align:center"><b *ngFor="let auteur of livre.auteurs"><i>{{auteur.prenom}} {{auteur.nom}}</i></b></p>
+      </div>
+      <p></p>
+      <p><img *ngIf="livre.imagePath != empty" src="assets/images/{{livre.imagePath}}" width="100px" height="150px" class="rounded text-center center-block">
+        <img *ngIf="livre.imagePath == empty" src="assets//images/imageVide.jpg" width="100px" height="150px" class="rounded text-center center-block"></p>
+      <h3>Resumé :</h3>
+      <p>{{livre.description}}</p>
+    </div>
+    <div class="thumbnail">
+      <p><strong>editeur :</strong> {{livre.editeur.nom}}</p>
+      <p><strong>adresse editeur :</strong> {{livre.editeur.adresse}}</p>
+      <p><strong>date de publication :</strong> {{livre.datePublication}}</p>
+      <p><strong>prix :</strong> {{livre.prix}} &euro;</p>
+      <p><strong>catégorie :</strong> {{livre.categorie.nom}}</p>
+    </div>
+    <button type="button" class="btn-outline-success and-all-other-classes center-block " style="background-color:#ddd">
+        <a routerLink="/livre">ajout panier </a>
+    </button>
+  </div>
+</div>
