@@ -19,6 +19,7 @@ import { ModifmembreComponent } from './modifmembre/modifmembre.component';
 import { BibliothequesComponent } from './bibliotheques/bibliotheques.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { LivreComponent } from './livre/livre.component';
+import { MessagesComponent } from './messages/messages.component';
 // import { GestionlivresComponent } from './gestionlivres/gestionlivres.component';
 // import { GestionmembresComponent } from './gestionmembres/gestionmembres.component';
 
@@ -39,7 +40,8 @@ import { LivreComponent } from './livre/livre.component';
     ModifmembreComponent,
     BibliothequesComponent,
     InscriptionComponent,
-     LivreComponent//,
+     LivreComponent,
+     MessagesComponent//,
     // GestionlivresComponent,
     // GestionmembresComponent
   ],
