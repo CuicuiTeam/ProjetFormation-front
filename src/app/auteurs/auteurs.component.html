@@ -7,9 +7,8 @@
 					<h3 class="text-center">
 						<i>{{auteur.prenom}}</i> <b>{{auteur.nom}}</b>
 					</h3>
-					<img *ngIf="auteur.imagePath; else noImg" src="/assets/images/{{auteur.imagePath}}" width="75px" height="125px" class="rounded text-center center-block"
-					/>
-					<ng-template #noImg><img src="/assets/images/defaultImg" width="75px" height="125px" class="rounded text-center center-block" /></ng-template>
+					<img *ngIf="auteur.imagePath; else imageVide" src="http://localhost:8080/ProjetFormation/imageauteur/?imagePath={{auteur.imagePath}}" width="180px" height="250px" class="rounded text-center center-block">
+                        <ng-template #imageVide><img src="http://localhost:8080/ProjetFormation/imageauteur/?imagePath=imageVide.jpg" width="180px" height="250px" class="rounded text-center center-block"></ng-template>
 					<button type="button" class="btn btn-outline-success and-all-other-classes center-block" style="background-color: #d9edf7">
 							<a routerLink="/auteur/{{auteur.id}}" style="color: inherit">
 								Plus d'info </a>

@@ -6,7 +6,7 @@
 
 
 <div class="row">
-
+<div class="container">
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h1 style="text-align:center">{{auteur.prenom}} {{auteur.nom}}</h1>
@@ -29,13 +29,14 @@
 					<ng-template><img src="/assets/images/ressources/images/imageVide.jpg" width="100px" height="150px" class="rounded text-center center-block"></ng-template>
 					<p></p>
 					<button type="button" class="btn btn-default">
-							<a href="/livre/{{livre.id}}"><span class="glyphicon glyphicon-info-sign"></span>Plus d'informations</a>
+							<a routerLink="/livre/{{livre.id}}"><span class="glyphicon glyphicon-info-sign"></span>Plus d'informations</a>
 						</button>
 					<button type="button" class="btn btn-default">
-							<a href="/livre"> <span class="glyphicon glyphicon-shopping-cart"></span>Ajout au panier</a>
+							<a routerLink="/livre"> <span class="glyphicon glyphicon-shopping-cart"></span>Ajout au panier</a>
 						</button>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 </div>

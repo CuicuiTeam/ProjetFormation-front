@@ -11,8 +11,8 @@
                     <p>Prix: {{liste.prix}}&euro;</p>
                     <p>Date de publication: {{liste.datePublication}}</p>
                     <div style="text-align: center; bottom: 55px; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;">
-                        <img *ngIf="liste.imagePath; else imageVide" src="http://localhost:8080/ProjetFormation/image/?imagePath={{liste.imagePath}}" width="180px" height="250px" class="rounded text-center center-block">
-                        <ng-template #imageVide><img src="http://localhost:8080/ProjetFormation/image/?imagePath=imageVide.jpg" width="180px" height="250px" class="rounded text-center center-block"></ng-template>
+                        <img *ngIf="liste.imagePath; else imageVide" src="http://localhost:8080/ProjetFormation/image/?imagePath={{liste.imagePath}}" width="125px" height="175px" class="rounded text-center center-block">
+                        <ng-template #imageVide><img src="http://localhost:8080/ProjetFormation/image/?imagePath=imageVide.jpg" width="125px" height="175px" class="rounded text-center center-block"></ng-template>
                         <p></p>
                         <button type="button" class="btn btn-default">
                             <a routerLink="/livre/{{liste.id}}"><span class="glyphicon glyphicon-info-sign"></span>Plus d'infos</a>
