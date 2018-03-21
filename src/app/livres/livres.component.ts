@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LivresVM } from '../model/LivresVM';
+import { LivreVM } from '../model/LivreVM';
 import { BackEndService } from '../service/back-end.service';
 import { MessagesService } from '../service/messages.service';
 import { DatashareService } from '../service/datashare.service';
@@ -24,7 +24,7 @@ export class LivresComponent implements OnInit {
   //   categorieId:null,
   //   auteursId:null
   // };
-  listeLivres: LivresVM[];
+  listeLivres: LivreVM[];
 
   constructor(
      private backService: BackEndService,

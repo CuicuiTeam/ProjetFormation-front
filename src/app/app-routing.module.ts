@@ -16,7 +16,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { LivreComponent } from './livre/livre.component';
 
 const routes: Routes = [
-    { path: '', component: LivresComponent },
+    { path: 'accueil', component: LivresComponent },
     { path: 'livre', component: LivreComponent },
     { path: 'connexion', component: ConnexionComponent },
     { path: 'auteurs', component: AuteursComponent },
