@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LivreVM } from '../model/LivreVM';
 import { BackEndService } from '../service/back-end.service';
 import { MessagesService } from '../service/messages.service';
 import { DatashareService } from '../service/datashare.service';
@@ -11,6 +12,19 @@ import { Router } from '@angular/router';
 })
 export class AjoutlivreComponent implements OnInit {
 
+  livre: LivreVM = {
+    titre: "",
+    description: "",
+    prix: 0,
+    datePublication: "",
+    imagePath: "",
+    isPopular: false,
+    isPeriodic: false,
+    editeurId: null,
+    categorieId: null,
+    auteursId: null
+  }
+
   constructor(
     private backService: BackEndService,
     private messageService: MessagesService,
@@ -21,7 +35,19 @@ export class AjoutlivreComponent implements OnInit {
   }
 
   ajoutLivre(){
-    
+    this.backService.AjoutLivre(this.livre).subscribe(
+      data => {
+        this.backService.handleData(data);
+        console.log(data.payload);
+        if(data.payload) {
+          console.log(data.payload);
+          this.router.navigate(['/accueil']);
+        }
+      },
+      error => {
+        console.error(error.message);
+      }
+    );
   }
 
 }

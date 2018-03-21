@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { IdentifiantsVM } from '../model/IdentifiantsVM';
-import { LivresVM } from '../model/LivresVM'
+import { LivreVM } from '../model/LivreVM'
 import { HttpHeaders,HttpErrorResponse } from '@angular/common/http';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError, retry } from 'rxjs/operators';
@@ -29,15 +29,25 @@ export class BackEndService {
     );
   } 
 
-  Livres(livresVm: LivresVM[]): Observable<any>
+  Livres(livresVm: LivreVM[]): Observable<any>
   {
     console.log(livresVm);
-    return this.http.get<LivresVM[]>("http://localhost:8080/ProjetFormation/livre/recommandes", httpOptions)
+    return this.http.get<LivreVM[]>("http://localhost:8080/ProjetFormation/livre/recommandes", httpOptions)
     .pipe(      
       retry(3),
       catchError(this.handleError)
     );
   } 
+
+  AjoutLivre(livreVm: LivreVM): Observable<any>
+  {
+    console.log(livreVm);
+    return this.http.put<LivreVM>("http://localhost:8080/ProjetFormation/livre", httpOptions)
+    .pipe(
+      retry(3),
+      catchError(this.handleError)
+    );
+  }
 
     private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
