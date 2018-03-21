@@ -25,8 +25,6 @@ export class ConnexionComponent implements OnInit {
     private dss: DatashareService,
     private router: Router) { }
 
-
-
   ngOnInit() {
   }
 
@@ -34,12 +32,13 @@ export class ConnexionComponent implements OnInit {
     this.backService.Login(this.identifiants).subscribe(
       data => {
         this.backService.handleData(data);
+        console.log(data.payload);
         if (data.payload) {
           console.log(data.payload);
           //cache the logged member in datashare service
           this.dss.loggedMember = data.payload;
           //navigate to home and display navbar or the hidden tabs
-          this.router.navigate(['/home']);
+          this.router.navigate(['/accueil']);
           
         }
       },
