@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { IdentifiantsVM } from '../model/IdentifiantsVM';
+import { LivresVM } from '../model/LivresVM'
 import { MembreVM } from '../model/MembreVM';
 import { BibliothequeVM } from '../model/BibliothequeVM';
 import { HttpHeaders,HttpErrorResponse } from '@angular/common/http';
@@ -50,6 +51,15 @@ Bibliotheque(bibliothequeVm: BibliothequeVM): Observable<any>
     );
   }
 
+ Livres(livresVm: LivresVM[]): Observable<any>
+  {
+    console.log(livresVm);
+    return this.http.get<LivresVM[]>("http://localhost:8080/ProjetFormation/livre/recommandes", httpOptions)
+    .pipe(      
+      retry(3),
+      catchError(this.handleError)
+    );
+  } 
 
     private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
