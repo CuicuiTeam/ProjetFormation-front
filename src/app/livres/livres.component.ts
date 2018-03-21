@@ -30,7 +30,7 @@ export class LivresComponent implements OnInit {
      private backService: BackEndService,
     private messageService: MessagesService,
     private dss: DatashareService,
-    private router: Router) {this.livre(); }
+    private router: Router) {this.livre();}
 
 
   ngOnInit() {
