@@ -4,8 +4,8 @@ export interface LivreVM{
     prix: number;
     datePublication: string;
     imagePath: string;
-    isPopular: Boolean;
-    isPeriodic: Boolean;
+    popular: Boolean;
+    periodic: Boolean;
     editeurId: number;
     categorieId: number;
     auteursId: number;
