@@ -1,4 +1,4 @@
-export interface LivresVM{
+export interface LivreVM{
     titre: string;
     description: string;
     prix: number;
