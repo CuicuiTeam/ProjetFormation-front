@@ -15,7 +15,6 @@ import { BibliothequesComponent } from './bibliotheques/bibliotheques.component'
 import { InscriptionComponent } from './inscription/inscription.component';
 import { LivreComponent } from './livre/livre.component';
 
-
 const routes: Routes = [
     { path: '', component: LivresComponent },
     { path: 'livre', component: LivreComponent },
