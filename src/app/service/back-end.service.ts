@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { IdentifiantsVM } from '../model/IdentifiantsVM';
+import { MembreVM } from '../model/MembreVM';
+import { BibliothequeVM } from '../model/BibliothequeVM';
 import { HttpHeaders,HttpErrorResponse } from '@angular/common/http';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError, retry } from 'rxjs/operators';
@@ -27,6 +29,27 @@ export class BackEndService {
       catchError(this.handleError)
     );
   } 
+
+   newMembre(membreVm: MembreVM): Observable<any>
+  {
+    console.log(membreVm);
+    return this.http.put<MembreVM>("http://localhost:8080/ProjetFormation/admin/membre", membreVm, httpOptions)
+    .pipe(      
+      retry(3),
+      catchError(this.handleError)
+    );
+  }
+
+Bibliotheque(bibliothequeVm: BibliothequeVM): Observable<any>
+  {
+    console.log(bibliothequeVm);
+    return this.http.get<BibliothequeVM>("http://localhost:8080/ProjetFormation/admin/bibliotheque", httpOptions)
+    .pipe(      
+      retry(3),
+      catchError(this.handleError)
+    );
+  }
+
 
     private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
