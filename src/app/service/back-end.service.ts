@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { IdentifiantsVM } from '../model/IdentifiantsVM';
+import { LivresVM } from '../model/LivresVM'
 import { HttpHeaders,HttpErrorResponse } from '@angular/common/http';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError, retry } from 'rxjs/operators';
@@ -22,6 +23,16 @@ export class BackEndService {
   {
     console.log(identifiantsVm);
     return this.http.post<IdentifiantsVM>("http://localhost:8080/ProjetFormation/connexion", identifiantsVm, httpOptions)
+    .pipe(      
+      retry(3),
+      catchError(this.handleError)
+    );
+  } 
+
+  Livres(livresVm: LivresVM[]): Observable<any>
+  {
+    console.log(livresVm);
+    return this.http.get<LivresVM[]>("http://localhost:8080/ProjetFormation/livre/recommandes", httpOptions)
     .pipe(      
       retry(3),
       catchError(this.handleError)
