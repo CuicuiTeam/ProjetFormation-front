@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { IdentifiantsVM } from '../model/IdentifiantsVM';
 import { LivresVM } from '../model/LivresVM'
+import { AuteurVM } from '../model/AuteurVM'
 import { MembreVM } from '../model/MembreVM';
 import { BibliothequeVM } from '../model/BibliothequeVM';
 import { HttpHeaders,HttpErrorResponse } from '@angular/common/http';
@@ -55,6 +56,26 @@ Bibliotheque(bibliothequeVm: BibliothequeVM[]): Observable<any>
   {
     console.log(livresVm);
     return this.http.get<LivresVM[]>("http://localhost:8080/ProjetFormation/livre/recommandes", httpOptions)
+    .pipe(      
+      retry(3),
+      catchError(this.handleError)
+    );
+  } 
+
+   OneAuteur(auteurVm: AuteurVM): Observable<any>
+  {
+    console.log(auteurVm);
+    return this.http.get<AuteurVM>("http://localhost:8080/ProjetFormation/auteur/"+auteurVm.id, httpOptions)
+    .pipe(      
+      retry(3),
+      catchError(this.handleError)
+    );
+  } 
+
+  Auteurs(auteurVm: AuteurVM[]): Observable<any>
+  {
+    console.log(auteurVm);
+    return this.http.get<AuteurVM[]>("http://localhost:8080/ProjetFormation/auteur", httpOptions)
     .pipe(      
       retry(3),
       catchError(this.handleError)
