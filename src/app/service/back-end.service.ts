@@ -51,9 +51,9 @@ Bibliotheque(bibliothequeVm: BibliothequeVM[]): Observable<any>
     );
   }
 
- Livres(livresVm: LivresVM[]): Observable<any>
+ Livres(livreVm: LivreVM[]): Observable<any>
   {
-    console.log(livresVm);
+    console.log(livreVm);
     return this.http.get<LivreVM[]>("http://localhost:8080/ProjetFormation/livre/recommandes", httpOptions)
     .pipe(      
       retry(3),
@@ -64,7 +64,7 @@ Bibliotheque(bibliothequeVm: BibliothequeVM[]): Observable<any>
   AjoutLivre(livreVm: LivreVM): Observable<any>
   {
     console.log(livreVm);
-    return this.http.put<LivreVM>("http://localhost:8080/ProjetFormation/livre", httpOptions)
+    return this.http.put<LivreVM>("http://localhost:8080/ProjetFormation/livre", livreVm, httpOptions)
     .pipe(
       retry(3),
       catchError(this.handleError)
