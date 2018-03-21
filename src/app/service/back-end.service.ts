@@ -41,7 +41,7 @@ export class BackEndService {
     );
   }
 
-Bibliotheque(bibliothequeVm: BibliothequeVM): Observable<any>
+Bibliotheque(bibliothequeVm: BibliothequeVM[]): Observable<any>
   {
     console.log(bibliothequeVm);
     return this.http.get<BibliothequeVM>("http://localhost:8080/ProjetFormation/admin/bibliotheque", httpOptions)

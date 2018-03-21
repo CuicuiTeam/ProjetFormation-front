@@ -11,29 +11,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./bibliotheques.component.css']
 })
 export class BibliothequesComponent implements OnInit {
-bibliotheque: BibliothequeVM = {
-    nom : "",
-    adresse : "",
-    };
+listeBibliotheques: BibliothequeVM[];
+    ;
 
   constructor(private backService: BackEndService,
     private messageService: MessagesService,
     private dss: DatashareService,
-    private router: Router) { }
+    private router: Router) {this.Bibliotheque(); }
 
   ngOnInit() {
   }
 
   Bibliotheque() {
-     this.backService.Bibliotheque(this.bibliotheque).subscribe(
+     this.backService.Bibliotheque(this.listeBibliotheques).subscribe(
       data => {
         this.backService.handleData(data);
-        // if (data.payload) {
-        //   console.log(data.payload);
-        //   //navigate to home and display navbar or the hidden tabs
-        //   this.router.navigate(['/accueil']);
+        if (data.payload) {
+          console.log(data.payload);
+          //navigate to home and display navbar or the hidden tabs
+          this.listeBibliotheques = data.payload;
           
-        // }
+        }
       },
       error => {
         console.error(error.message);
