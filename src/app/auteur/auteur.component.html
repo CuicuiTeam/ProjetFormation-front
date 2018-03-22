@@ -16,7 +16,7 @@
 			<p>{{auteur.biographie}}</p>
 		</div>
 	</div>
-	<div *ngFor="let livre of livres" class="col-lg-4" style="padding-bottom: 15px">
+	<div *ngFor="let livre of auteur.livres" class="col-lg-4" style="padding-bottom: 15px">
 		<div class="thumbnail" style="min-height: 530px; margin-bottom: 0px">
 			<div class="caption">
 				<h3>{{livre.titre}}</h3>
@@ -24,9 +24,8 @@
 				<p>Prix : {{livre.prix}}&euro;</p>
 				<p>Date de publication : {{livre.datePublication}}</p>
 				<div style="text-align: center; bottom: 25px; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;">
-					<img *ngIf="livre.imagePath; else noImg" src="/assets/images/{{livre.imagePath}}" width="100px" height="150px" class="rounded text-center center-block"
-					/>
-					<ng-template><img src="/assets/images/ressources/images/imageVide.jpg" width="100px" height="150px" class="rounded text-center center-block"></ng-template>
+					<img *ngIf="livre.imagePath; else imageVide" src="http://localhost:8080/ProjetFormation/image/?imagePath={{livre.imagePath}}" width="125px" height="175px" class="rounded text-center center-block">
+                        <ng-template #imageVide><img src="http://localhost:8080/ProjetFormation/image/?imagePath=imageVide.jpg" width="125px" height="175px" class="rounded text-center center-block"></ng-template>
 					<p></p>
 					<button type="button" class="btn btn-default">
 							<a routerLink="/livre/{{livre.id}}"><span class="glyphicon glyphicon-info-sign"></span>Plus d'informations</a>

@@ -62,6 +62,16 @@ Bibliotheque(bibliothequeVm: BibliothequeVM[]): Observable<any>
     );
   } 
 
+  Auteurs(auteurVm: AuteurVM[]): Observable<any>
+  {
+    console.log(auteurVm);
+    return this.http.get<AuteurVM[]>("http://localhost:8080/ProjetFormation/auteur", httpOptions)
+    .pipe(      
+      retry(3),
+      catchError(this.handleError)
+    );
+  } 
+
    OneAuteur(id): Observable<any>
   {
     console.log(id);
@@ -72,15 +82,17 @@ Bibliotheque(bibliothequeVm: BibliothequeVM[]): Observable<any>
     );
   } 
 
-  Auteurs(auteurVm: AuteurVM[]): Observable<any>
+  OneLivre(id): Observable<any>
   {
-    console.log(auteurVm);
-    return this.http.get<AuteurVM[]>("http://localhost:8080/ProjetFormation/auteur", httpOptions)
+    console.log(id);
+    return this.http.get<LivreVM>("http://localhost:8080/ProjetFormation/livre/" + id, httpOptions)
     .pipe(      
       retry(3),
       catchError(this.handleError)
     );
   } 
+
+  
 AjoutLivre(livreVm: LivreVM): Observable<any>
   {
     console.log(livreVm);
