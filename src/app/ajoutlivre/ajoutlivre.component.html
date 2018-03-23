@@ -1,5 +1,7 @@
+<app-header></app-header>
+<app-messages></app-messages>
 <div class="container">
-    <form name="creerlivre" class="form-horizontal">
+    <form class="form-horizontal">
         <fieldset>
             <legend>Ajouter un livre</legend>
             <div class="form-group">
@@ -38,18 +40,18 @@
             <div class="form-group">
                 <label class="control-label col-lg-2" for="populaire">Recommande</label>
                 <div class="col-lg-10">
-                    <input type="checkbox" [(ngModel)]="livre.isPopular" id="populaire" name="isPopular" />
+                    <input type="checkbox" [(ngModel)]="livre.popular" id="populaire" name="isPopular" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-lg-2" for="periodique">Periodique</label>
                 <div class="col-lg-10">
-                    <input type="checkbox" [(ngModel)]="livre.isPeriodic" id="periodique" name="isPeriodic" />
+                    <input type="checkbox" [(ngModel)]="livre.periodic" id="periodique" name="isPeriodic" />
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
-                    <button (click)="ajoutLivre()" class="btn btn-primary">Ajouter le livre</button>
+                    <button (click)="ajoutLivre()" type="submit" class="btn btn-primary">Ajouter le livre</button>
                 </div>
             </div>
         </fieldset>

@@ -18,13 +18,12 @@ export class AjoutlivreComponent implements OnInit {
     prix: 0,
     datePublication: "",
     imagePath: "",
-    isPopular: false,
-    isPeriodic: false,
-    editeurId: null,
-    categorieId: null,
-    auteursId: null,
-    id: null
-  }
+    popular: false,
+    periodic: false,
+    editeur: null,
+    categorie: null,
+    auteurs: null
+  };
 
   constructor(
     private backService: BackEndService,

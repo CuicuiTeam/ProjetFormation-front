@@ -17,10 +17,10 @@ import { LivreComponent } from './livre/livre.component';
 
 const routes: Routes = [
     { path: 'accueil', component: LivresComponent },
-    { path: 'livre', component: LivreComponent },
+    { path: 'livre/:id', component: LivreComponent },
     { path: 'connexion', component: ConnexionComponent },
     { path: 'auteurs', component: AuteursComponent },
-    { path: 'auteur', component: AuteurComponent },
+    { path: 'auteur/:id', component: AuteurComponent },
     { path: 'bibliotheques', component: BibliothequesComponent },
     //{ path: 'admin/livres', component: GestionlivresComponent },
     { path: 'admin/ajoutlivre', component: AjoutlivreComponent },

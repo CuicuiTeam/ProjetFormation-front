@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { IdentifiantsVM } from '../model/IdentifiantsVM';
 import { LivreVM } from '../model/LivreVM'
+import { AuteurVM } from '../model/AuteurVM'
 import { MembreVM } from '../model/MembreVM';
 import { PanierVM } from '../model/PanierVM'
 import { BibliothequeVM } from '../model/BibliothequeVM';
@@ -64,16 +65,46 @@ Bibliotheque(bibliothequeVm: BibliothequeVM[]): Observable<any>
     );
   } 
 
-  AjoutLivre(livreVm: LivreVM): Observable<any>
+  Auteurs(auteurVm: AuteurVM[]): Observable<any>
+  {
+    console.log(auteurVm);
+    return this.http.get<AuteurVM[]>("http://localhost:8080/ProjetFormation/auteur", httpOptions)
+    .pipe(      
+      retry(3),
+      catchError(this.handleError)
+    );
+  } 
+
+   OneAuteur(id): Observable<any>
+  {
+    console.log(id);
+    return this.http.get<AuteurVM>("http://localhost:8080/ProjetFormation/auteur/" + id, httpOptions)
+    .pipe(      
+      retry(3),
+      catchError(this.handleError)
+    );
+  } 
+
+  OneLivre(id): Observable<any>
+  {
+    console.log(id);
+    return this.http.get<LivreVM>("http://localhost:8080/ProjetFormation/livre/" + id, httpOptions)
+    .pipe(      
+      retry(3),
+      catchError(this.handleError)
+    );
+  } 
+
+  
+AjoutLivre(livreVm: LivreVM): Observable<any>
   {
     console.log(livreVm);
-    return this.http.put<LivreVM>("http://localhost:8080/ProjetFormation/livre", httpOptions)
+    return this.http.put<LivreVM>("http://localhost:8080/ProjetFormation/livre", livreVm, httpOptions)
     .pipe(
       retry(3),
       catchError(this.handleError)
     );
   }
-
   AjoutPanier(id:number):Observable<any>{
     return this.http.post<PanierVM>("http://localhost:8080/ProjetFormation/panier/addbook?idLivre="+id,{httpOptions,withCredentials:true})
     .pipe(
