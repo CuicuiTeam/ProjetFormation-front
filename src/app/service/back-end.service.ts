@@ -16,7 +16,7 @@ import { catchError, retry } from 'rxjs/operators';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'
-  })
+  }),withCredentials:true
 }
 
 
@@ -30,6 +30,15 @@ export class BackEndService {
   {
     console.log(identifiantsVm);
     return this.http.post<IdentifiantsVM>("http://localhost:8080/ProjetFormation/connexion", identifiantsVm, httpOptions)
+    .pipe(      
+      retry(3),
+      catchError(this.handleError)
+    );
+  } 
+
+  Logout(): Observable<any>
+  {
+    return this.http.post<IdentifiantsVM>("http://localhost:8080/ProjetFormation/deconnexion", httpOptions)
     .pipe(      
       retry(3),
       catchError(this.handleError)
@@ -134,10 +143,10 @@ AjoutLivre(livreVm: LivreVM): Observable<any>
     );
   }
 
-  AfficherPanier(panierVm: PanierVM[]): Observable<any>
+  AfficherPanier(): Observable<any>
   {
-    console.log(panierVm);
-    return this.http.get<PanierVM>("http://localhost:8080/ProjetFormation/panier", httpOptions)
+   
+    return this.http.get("http://localhost:8080/ProjetFormation/panier", httpOptions)
     .pipe(
       retry(3),
       catchError(this.handleError)

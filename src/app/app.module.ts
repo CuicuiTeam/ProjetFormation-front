@@ -31,7 +31,8 @@ import { PanierComponent } from './panier/panier.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PeriodiquesComponent } from './periodiques/periodiques.component';
 import { CategorieComponent } from './categorie/categorie.component';
-
+import {LocalStorageService} from 'ngx-webstorage';
+import { GestionempruntsComponent } from './gestionemprunts/gestionemprunts.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { CategorieComponent } from './categorie/categorie.component';
      PanierComponent,
      PeriodiquesComponent,
      CategorieComponent//,
+	GestionempruntsComponent
     // GestionlivresComponent,
     // GestionmembresComponent
   ],
@@ -64,7 +66,7 @@ import { CategorieComponent } from './categorie/categorie.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [BackEndService, MessagesService, DatashareService, {
+  providers: [BackEndService, MessagesService, DatashareService, LocalStorageService, {
       provide: HTTP_INTERCEPTORS,
       useClass: CustomInterceptor ,
       multi: true
