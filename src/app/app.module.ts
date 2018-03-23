@@ -30,7 +30,6 @@ import { DatashareService } from './service/datashare.service';
 import { PanierComponent } from './panier/panier.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import {LocalStorageService} from 'ngx-webstorage';
-import { DeconnexionComponent } from './deconnexion/deconnexion.component';
 import { GestionempruntsComponent } from './gestionemprunts/gestionemprunts.component';
 
 
@@ -53,7 +52,6 @@ import { GestionempruntsComponent } from './gestionemprunts/gestionemprunts.comp
      LivreComponent,
      MessagesComponent,
      PanierComponent,
-     DeconnexionComponent,
      GestionempruntsComponent
     // GestionlivresComponent,
     // GestionmembresComponent
