@@ -7,6 +7,7 @@ import { AjoutlivreComponent } from './ajoutlivre/ajoutlivre.component';
 import { LivresComponent } from './livres/livres.component';
 import { AjoutbibliothequeComponent } from './ajoutbibliotheque/ajoutbibliotheque.component';
 import { ConnexionComponent } from './connexion/connexion.component';
+import { DeconnexionComponent } from './deconnexion/deconnexion.component';
 import { ModiflivreComponent } from './modiflivre/modiflivre.component';
 import { ModifmembreComponent } from './modifmembre/modifmembre.component';
 //import { GestionmembresComponent } from './gestionmembres/gestionmembres.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
     { path: 'accueil', component: LivresComponent },
     { path: 'livre/:id', component: LivreComponent },
     { path: 'connexion', component: ConnexionComponent },
+    { path: 'deconnexion', component: DeconnexionComponent },
     { path: 'auteurs', component: AuteursComponent },
     { path: 'auteur/:id', component: AuteurComponent },
     { path: 'bibliotheques', component: BibliothequesComponent },

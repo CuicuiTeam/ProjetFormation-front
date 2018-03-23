@@ -29,7 +29,9 @@ import { MessagesService } from './service/messages.service';
 import { DatashareService } from './service/datashare.service';
 import { PanierComponent } from './panier/panier.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-
+import {LocalStorageService} from 'ngx-webstorage';
+import { DeconnexionComponent } from './deconnexion/deconnexion.component';
+import { GestionempruntsComponent } from './gestionemprunts/gestionemprunts.component';
 
 
 @NgModule({
@@ -50,7 +52,9 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     InscriptionComponent,
      LivreComponent,
      MessagesComponent,
-     PanierComponent//,
+     PanierComponent,
+     DeconnexionComponent,
+     GestionempruntsComponent
     // GestionlivresComponent,
     // GestionmembresComponent
   ],
@@ -60,7 +64,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [BackEndService, MessagesService, DatashareService, {
+  providers: [BackEndService, MessagesService, DatashareService, LocalStorageService, {
       provide: HTTP_INTERCEPTORS,
       useClass: CustomInterceptor ,
       multi: true

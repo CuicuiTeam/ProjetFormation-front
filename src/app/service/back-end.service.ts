@@ -35,6 +35,15 @@ export class BackEndService {
     );
   } 
 
+  Logout(): Observable<any>
+  {
+    return this.http.post<IdentifiantsVM>("http://localhost:8080/ProjetFormation/deconnexion", httpOptions)
+    .pipe(      
+      retry(3),
+      catchError(this.handleError)
+    );
+  } 
+
    newMembre(membreVm: MembreVM): Observable<any>
   {
     console.log(membreVm);
