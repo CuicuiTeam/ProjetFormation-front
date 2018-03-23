@@ -54,10 +54,9 @@ import { GestionempruntsComponent } from './gestionemprunts/gestionemprunts.comp
      LivreComponent,
      MessagesComponent,
      PanierComponent,
-     GestionempruntsComponent
+     GestionempruntsComponent,
      PeriodiquesComponent,
      CategorieComponent//,
-	GestionempruntsComponent
     // GestionlivresComponent,
     // GestionmembresComponent
   ],
