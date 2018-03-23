@@ -5,7 +5,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h1 style="text-align: center">{{livre.titre}}</h1>
-        <p style="text-align:center"><b *ngFor="let livre of livre.auteur"><i>{{auteur.prenom}} {{auteur.nom}}</i></b></p>
+        <!--<p style="text-align:center"><b *ngFor="let auteur of livre.auteurs"><i>{{auteur.prenom}} {{auteur.nom}}</i></b></p>-->
       </div>
       <p></p>
       <p><img *ngIf="livre.imagePath; else imageVide" src="http://localhost:8080/ProjetFormation/image/?imagePath={{livre.imagePath}}" width="125px" height="175px" class="rounded text-center center-block">
@@ -14,11 +14,11 @@
       <p>{{livre.description}}</p>
     </div>
     <div class="thumbnail">
-      <p><strong>editeur :</strong> {{livre.editeur.nom}}</p>
-      <p><strong>adresse editeur :</strong> {{livre.editeur.adresse}}</p>
+      <!--<p><strong>editeur :</strong> {{livre.editeur.nom}}</p>
+      <p><strong>adresse editeur :</strong> {{livre.editeur.adresse}}</p>-->
       <p><strong>date de publication :</strong> {{livre.datePublication}}</p>
       <p><strong>prix :</strong> {{livre.prix}} &euro;</p>
-      <p><strong>catégorie :</strong> {{livre.categorie.nom}}</p>
+      <!--<p><strong>catégorie :</strong> {{livre.categorie.nom}}</p>-->
     </div>
     <button type="button" class="btn-outline-success and-all-other-classes center-block " style="background-color:#ddd">
         <a routerLink="/livre">ajout panier </a>

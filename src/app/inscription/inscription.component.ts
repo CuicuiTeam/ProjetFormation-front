@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class InscriptionComponent implements OnInit {
 membre: MembreVM = {
+  id : null,
  email : "",
     password : "",
     nom : "",
