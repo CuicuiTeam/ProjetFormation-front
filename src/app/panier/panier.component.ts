@@ -18,12 +18,12 @@ export class PanierComponent implements OnInit {
   //   membreId: null
 
   // };
-  contenu: PanierVM[];
+  contenu: any;
   constructor(
      private backService: BackEndService,
     private messageService: MessagesService,
     private dss: DatashareService,
-    private router: Router) {}
+    private router: Router) {this.panier();}
   
 
   ngOnInit() {
@@ -31,7 +31,7 @@ export class PanierComponent implements OnInit {
 
   panier(){
 
-    this.backService.AfficherPanier(this.contenu).subscribe(
+    this.backService.AfficherPanier().subscribe(
       data => {
         this.backService.handleData(data);
         if (data.payload) {

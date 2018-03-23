@@ -14,9 +14,11 @@ import { ModifmembreComponent } from './modifmembre/modifmembre.component';
 import { BibliothequesComponent } from './bibliotheques/bibliotheques.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { LivreComponent } from './livre/livre.component';
+import { PanierComponent } from './panier/panier.component';
 
 const routes: Routes = [
     { path: 'accueil', component: LivresComponent },
+    { path: 'panier', component: PanierComponent },
     { path: 'livre/:id', component: LivreComponent },
     { path: 'connexion', component: ConnexionComponent },
     { path: 'auteurs', component: AuteursComponent },

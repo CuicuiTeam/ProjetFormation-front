@@ -15,7 +15,7 @@ import { catchError, retry } from 'rxjs/operators';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'
-  })
+  }),withCredentials:true
 }
 
 
@@ -113,10 +113,10 @@ AjoutLivre(livreVm: LivreVM): Observable<any>
     );
   }
 
-  AfficherPanier(panierVm: PanierVM[]): Observable<any>
+  AfficherPanier(): Observable<any>
   {
-    console.log(panierVm);
-    return this.http.get<PanierVM>("http://localhost:8080/ProjetFormation/panier", httpOptions)
+   
+    return this.http.get("http://localhost:8080/ProjetFormation/panier", httpOptions)
     .pipe(
       retry(3),
       catchError(this.handleError)
