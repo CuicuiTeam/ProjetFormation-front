@@ -9,4 +9,5 @@ export interface LivreVM{
     editeurId: number;
     categorieId: number;
     auteursId: number;
+    id:number;
 }

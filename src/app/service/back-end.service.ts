@@ -4,16 +4,19 @@ import { Observable } from 'rxjs/Observable';
 import { IdentifiantsVM } from '../model/IdentifiantsVM';
 import { LivreVM } from '../model/LivreVM'
 import { MembreVM } from '../model/MembreVM';
+import { PanierVM } from '../model/PanierVM'
 import { BibliothequeVM } from '../model/BibliothequeVM';
 import { HttpHeaders,HttpErrorResponse } from '@angular/common/http';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError, retry } from 'rxjs/operators';
+
 
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'
   })
 }
+
 
 @Injectable()
 export class BackEndService {
@@ -51,9 +54,9 @@ Bibliotheque(bibliothequeVm: BibliothequeVM[]): Observable<any>
     );
   }
 
- Livres(livresVm: LivresVM[]): Observable<any>
+ Livres(livreVm: LivreVM[]): Observable<any>
   {
-    console.log(livresVm);
+    console.log(livreVm);
     return this.http.get<LivreVM[]>("http://localhost:8080/ProjetFormation/livre/recommandes", httpOptions)
     .pipe(      
       retry(3),
@@ -65,6 +68,24 @@ Bibliotheque(bibliothequeVm: BibliothequeVM[]): Observable<any>
   {
     console.log(livreVm);
     return this.http.put<LivreVM>("http://localhost:8080/ProjetFormation/livre", httpOptions)
+    .pipe(
+      retry(3),
+      catchError(this.handleError)
+    );
+  }
+
+  AjoutPanier(id:number):Observable<any>{
+    return this.http.post<PanierVM>("http://localhost:8080/ProjetFormation/panier/addbook?idLivre="+id,{httpOptions,withCredentials:true})
+    .pipe(
+      retry(3),
+      catchError(this.handleError)
+    );
+  }
+
+  AfficherPanier(panierVm: PanierVM[]): Observable<any>
+  {
+    console.log(panierVm);
+    return this.http.get<PanierVM>("http://localhost:8080/ProjetFormation/panier", httpOptions)
     .pipe(
       retry(3),
       catchError(this.handleError)

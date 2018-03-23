@@ -22,7 +22,8 @@ export class AjoutlivreComponent implements OnInit {
     isPeriodic: false,
     editeurId: null,
     categorieId: null,
-    auteursId: null
+    auteursId: null,
+    id: null
   }
 
   constructor(
