@@ -6,6 +6,7 @@ import { LivreVM } from '../model/LivreVM'
 import { AuteurVM } from '../model/AuteurVM'
 import { MembreVM } from '../model/MembreVM';
 import { PanierVM } from '../model/PanierVM'
+import { CategorieVM } from '../model/CategorieVM'
 import { BibliothequeVM } from '../model/BibliothequeVM';
 import { HttpHeaders,HttpErrorResponse } from '@angular/common/http';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
@@ -73,6 +74,26 @@ Bibliotheque(bibliothequeVm: BibliothequeVM[]): Observable<any>
       catchError(this.handleError)
     );
   } 
+
+  LivresPeriodiques(livreVm: LivreVM[]): Observable<any>
+  {
+    console.log(livreVm);
+    return this.http.get<LivreVM[]>("http://localhost:8080/ProjetFormation/livre/periodiques", httpOptions)
+    .pipe(      
+      retry(3),
+      catchError(this.handleError)
+    );
+  } 
+
+  LivresCategorie(id): Observable<any>
+  {
+    console.log(id);
+    return this.http.get<CategorieVM>("http://localhost:8080/ProjetFormation/livre/categorie/" + id, httpOptions)
+    .pipe(      
+      retry(3),
+      catchError(this.handleError)
+    );
+  }
 
   Auteurs(auteurVm: AuteurVM[]): Observable<any>
   {

@@ -29,6 +29,8 @@ import { MessagesService } from './service/messages.service';
 import { DatashareService } from './service/datashare.service';
 import { PanierComponent } from './panier/panier.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { PeriodiquesComponent } from './periodiques/periodiques.component';
+import { CategorieComponent } from './categorie/categorie.component';
 import {LocalStorageService} from 'ngx-webstorage';
 import { GestionempruntsComponent } from './gestionemprunts/gestionemprunts.component';
 
@@ -53,6 +55,9 @@ import { GestionempruntsComponent } from './gestionemprunts/gestionemprunts.comp
      MessagesComponent,
      PanierComponent,
      GestionempruntsComponent
+     PeriodiquesComponent,
+     CategorieComponent//,
+	GestionempruntsComponent
     // GestionlivresComponent,
     // GestionmembresComponent
   ],

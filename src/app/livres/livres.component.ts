@@ -27,6 +27,7 @@ export class LivresComponent implements OnInit {
 
   id:number;
   listeLivres: LivreVM[];
+ 
 
   constructor(
      private backService: BackEndService,
@@ -57,6 +58,8 @@ export class LivresComponent implements OnInit {
     );
 
   }
+
+ 
 
   ajoutpanier(id){
 
