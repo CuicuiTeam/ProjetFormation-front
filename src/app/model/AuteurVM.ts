@@ -1,7 +1,7 @@
 import { LivreVM } from '../model/LivreVM';
 
 export interface AuteurVM{
-    id : string;
+    id : number;
     nom : string;
     prenom: string;
     biographie: string;

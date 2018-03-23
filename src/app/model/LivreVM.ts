@@ -1,3 +1,7 @@
+import { AuteurVM } from '../model/AuteurVM';
+import { EditeurVM } from '../model/EditeurVM';
+import { CategorieVM } from '../model/CategorieVM';
+
 export interface LivreVM{
     titre: string;
     description: string;
@@ -6,7 +10,7 @@ export interface LivreVM{
     imagePath: string;
     popular: Boolean;
     periodic: Boolean;
-    editeurId: number;
-    categorieId: number;
-    auteursId: number;
+    editeur: EditeurVM;
+    categorie: CategorieVM;
+    auteurs: AuteurVM[];
 }

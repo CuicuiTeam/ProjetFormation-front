@@ -20,9 +20,9 @@ export class AjoutlivreComponent implements OnInit {
     imagePath: "",
     popular: false,
     periodic: false,
-    editeurId: null,
-    categorieId: null,
-    auteursId: null
+    editeur: null,
+    categorie: null,
+    auteurs: null
   };
 
   constructor(
