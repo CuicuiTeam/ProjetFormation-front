@@ -1,4 +1,5 @@
 export interface MembreVM {
+    id : number;
     email : string;
     password : string;
     nom : string;

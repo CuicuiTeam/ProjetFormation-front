@@ -32,7 +32,6 @@ export class ConnexionComponent implements OnInit {
     this.backService.Login(this.identifiants).subscribe(
       data => {
         this.backService.handleData(data);
-        console.log(data.payload);
         if (data.payload) {
           console.log(data.payload);
           //cache the logged member in datashare service

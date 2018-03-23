@@ -29,6 +29,7 @@ const routes: Routes = [
     { path: 'admin/inscription', component: InscriptionComponent },
     { path: 'admin/modifmembre', component: ModifmembreComponent },
     { path: 'admin/ajoutbibliotheque', component: AjoutbibliothequeComponent },
+    { path: '', component: LivresComponent },
     { path: '**', component: PagenotfoundComponent }
 
 
