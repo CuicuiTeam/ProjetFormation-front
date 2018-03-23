@@ -13,4 +13,5 @@ export interface LivreVM{
     editeur: EditeurVM;
     categorie: CategorieVM;
     auteurs: AuteurVM[];
+    id:number;
 }

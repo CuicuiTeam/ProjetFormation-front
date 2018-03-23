@@ -5,16 +5,19 @@ import { IdentifiantsVM } from '../model/IdentifiantsVM';
 import { LivreVM } from '../model/LivreVM'
 import { AuteurVM } from '../model/AuteurVM'
 import { MembreVM } from '../model/MembreVM';
+import { PanierVM } from '../model/PanierVM'
 import { BibliothequeVM } from '../model/BibliothequeVM';
 import { HttpHeaders,HttpErrorResponse } from '@angular/common/http';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError, retry } from 'rxjs/operators';
+
 
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'
   })
 }
+
 
 @Injectable()
 export class BackEndService {
@@ -102,6 +105,24 @@ AjoutLivre(livreVm: LivreVM): Observable<any>
       catchError(this.handleError)
     );
   }
+  AjoutPanier(id:number):Observable<any>{
+    return this.http.post<PanierVM>("http://localhost:8080/ProjetFormation/panier/addbook?idLivre="+id,{httpOptions,withCredentials:true})
+    .pipe(
+      retry(3),
+      catchError(this.handleError)
+    );
+  }
+
+  AfficherPanier(panierVm: PanierVM[]): Observable<any>
+  {
+    console.log(panierVm);
+    return this.http.get<PanierVM>("http://localhost:8080/ProjetFormation/panier", httpOptions)
+    .pipe(
+      retry(3),
+      catchError(this.handleError)
+    );
+  }
+
     private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.

@@ -24,6 +24,8 @@ export class LivresComponent implements OnInit {
   //   categorieId:null,
   //   auteursId:null
   // };
+
+  id:number;
   listeLivres: LivreVM[];
 
   constructor(
@@ -45,6 +47,25 @@ export class LivresComponent implements OnInit {
           //cache the logged member in datashare service
           this.listeLivres = data.payload;
           
+        }
+      },
+      error => {
+        console.error(error.message);
+        //messageService.displayFailureMessage(error.message);
+      }
+
+    );
+
+  }
+
+  ajoutpanier(id){
+
+     this.backService.AjoutPanier(id).subscribe(
+      data => {
+        this.backService.handleData(data);
+        if (data.payload) {
+          console.log(data.payload);
+          //cache the logged member in datashare service
         }
       },
       error => {

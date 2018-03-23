@@ -24,8 +24,11 @@ import { MessagesComponent } from './messages/messages.component';
 // import { GestionlivresComponent } from './gestionlivres/gestionlivres.component';
 // import { GestionmembresComponent } from './gestionmembres/gestionmembres.component';
 import { BackEndService } from './service/back-end.service';
+import { CustomInterceptor } from './service/CustomInterceptor.service';
 import { MessagesService } from './service/messages.service';
 import { DatashareService } from './service/datashare.service';
+import { PanierComponent } from './panier/panier.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 
@@ -46,7 +49,8 @@ import { DatashareService } from './service/datashare.service';
     BibliothequesComponent,
     InscriptionComponent,
      LivreComponent,
-     MessagesComponent//,
+     MessagesComponent,
+     PanierComponent//,
     // GestionlivresComponent,
     // GestionmembresComponent
   ],
@@ -56,7 +60,11 @@ import { DatashareService } from './service/datashare.service';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [BackEndService, MessagesService, DatashareService],
+  providers: [BackEndService, MessagesService, DatashareService, {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CustomInterceptor ,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,12 +1,10 @@
-<app-header></app-header>
-<app-messages></app-messages>
 <div class="container">
     <div class="row">
         <div *ngFor="let L of listeLivres" class="col-md-3" style="padding-bottom: 15px">
             <div class="thumbnail" style="min-height: 564px">
                 <div class="caption">
                     <h3>{{L.titre}}</h3>
-                    <p>
+                        <p>
                         <b *ngFor="let auteur of livre.auteurs"><i>{{auteur.prenom}} {{auteur.nom}}</i></b>
                     </p>
                     <p style="width: 250px; max-height: 144px; overflow-y: hidden; text-overflow-y: ellipsis">{{L.description}}</p>
