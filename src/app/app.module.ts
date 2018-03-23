@@ -29,6 +29,8 @@ import { MessagesService } from './service/messages.service';
 import { DatashareService } from './service/datashare.service';
 import { PanierComponent } from './panier/panier.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { PeriodiquesComponent } from './periodiques/periodiques.component';
+import { CategorieComponent } from './categorie/categorie.component';
 
 
 
@@ -50,7 +52,9 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     InscriptionComponent,
      LivreComponent,
      MessagesComponent,
-     PanierComponent//,
+     PanierComponent,
+     PeriodiquesComponent,
+     CategorieComponent//,
     // GestionlivresComponent,
     // GestionmembresComponent
   ],

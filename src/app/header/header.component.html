@@ -1,12 +1,12 @@
-<div class="jumbotron" style="padding-bottom: 5px">
+<div class="jumbotron" style="padding-bottom: 5px; background-image: url('http://localhost:8080/ProjetFormation/image/?imagePath=imagefond.jpg')">
 	<div class="container">
-		<h2>Bibliothèque Cuicui</h2>
-		<p>Pas seulement des livres sur les cuicui</p>
+		<h2 style="color:#f1d08d">Bibliothèque Cuicui</h2>
+		<p style="color:#fbedd2">Pas seulement des livres sur les cuicui</p>
 		<form class="form-horizontal" method="POST" action="/recherche" class="pull-right">
 			<button type="submit" class="btn btn-info pull-right" style="font-size: 14px">
 			<span class="glyphicon glyphicon-search"></span>
 		</button>
-			<input class="form-control mr-sm-2 pull-right" placeholder="Recherche" id="motRecherche" name="motRecherche" style="width: 80%; float: right"
+			<input class="btn btn-default pull-right" placeholder="Recherche" id="motRecherche" name="motRecherche" style="width: 80%; float: right"
 				autocomplete="off" />
 		</form>
 		<!--<div>
@@ -46,13 +46,13 @@
 					<li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Catégories<span
 						class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a routerLink="/categorie/roman">Roman</a></li>
-							<li><a routerLink="/categorie/biographie">Biographie</a></li>
-							<li><a routerLink="/categorie/jeunesse">Jeunesse</a></li>
+							<li><a routerLink="/categorie/3" >Roman</a></li>
+							<li><a routerLink="/categorie/1" >Biographie</a></li>
+							<li><a routerLink="/categorie/2" >Jeunesse</a></li>
 						</ul>
 					</li>
 
-					<li><a routerLink="/categorie/jeunesse">Jeunesse</a></li>
+					<li><a routerLink="/categorie/2" >Jeunesse</a></li>
 					<li><a routerLink="/periodiques">Périodiques</a></li>
 					<li><a routerLink="/bibliotheques">Bibliothèques</a></li>
 				</ul>

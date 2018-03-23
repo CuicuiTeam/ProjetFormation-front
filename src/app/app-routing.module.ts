@@ -14,10 +14,14 @@ import { ModifmembreComponent } from './modifmembre/modifmembre.component';
 import { BibliothequesComponent } from './bibliotheques/bibliotheques.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { LivreComponent } from './livre/livre.component';
+import { CategorieComponent } from './categorie/categorie.component';
+import { PeriodiquesComponent } from './periodiques/periodiques.component';
 
 const routes: Routes = [
     { path: 'accueil', component: LivresComponent },
+    { path: 'periodiques', component: PeriodiquesComponent },
     { path: 'livre/:id', component: LivreComponent },
+    { path: 'categorie/:id', component: CategorieComponent },
     { path: 'connexion', component: ConnexionComponent },
     { path: 'auteurs', component: AuteursComponent },
     { path: 'auteur/:id', component: AuteurComponent },
