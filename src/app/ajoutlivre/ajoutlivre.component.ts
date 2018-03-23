@@ -22,7 +22,8 @@ export class AjoutlivreComponent implements OnInit {
     periodic: false,
     editeur: null,
     categorie: null,
-    auteurs: null
+    auteurs: null,
+    id: null
   };
 
   constructor(
