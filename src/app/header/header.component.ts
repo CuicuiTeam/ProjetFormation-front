@@ -12,9 +12,6 @@ import {LocalStorageService, LocalStorage} from 'ngx-webstorage';
 })
 export class HeaderComponent implements OnInit {
 
-  @LocalStorage('me')
-  boundAttribute;
-
   user : MembreVM;
   class = "alert-danger";
   message = "Attention Michel";
@@ -35,7 +32,6 @@ export class HeaderComponent implements OnInit {
     this.backService.Logout().subscribe(
       data => {
         this.backService.handleData(data);
-        console.log(this.boundAttribute);
         this.storage.clear('me');
         this.user = null;
         this.router.navigate(['/accueil']);
@@ -45,6 +41,10 @@ export class HeaderComponent implements OnInit {
        //messageService.displayFailureMessage(error.message);
      }
    );
+  }
+
+  search(recherche : string){
+    this.router.navigate(['/recherche/'+ recherche]);
   }
 
 }

@@ -1,7 +1,7 @@
 <app-header></app-header>
 <app-messages></app-messages>
-<div class="row">
-	<div class="container">
+<div class="container">
+	<div class="row">
 		<h1 style="color:#aa5c1e">{{titre}}</h1>
 		<div *ngFor="let auteur of listeAuteurs" class="col-lg-4" style="padding-bottom: 30px">
 			<div class="caption">
@@ -9,10 +9,11 @@
 					<h3 class="text-center" style="color:#c58545">
 						<i>{{auteur.prenom}}</i> <b>{{auteur.nom}}</b>
 					</h3>
-					<img *ngIf="auteur.imagePath; else imageVide" src="http://localhost:8080/ProjetFormation/imageauteur/?imagePath={{auteur.imagePath}}" width="125px" height="200px" class="rounded text-center center-block">
-                        <ng-template #imageVide><img src="http://localhost:8080/ProjetFormation/imageauteur/?imagePath=imageVide.jpg" width="125px" height="200px" class="rounded text-center center-block"></ng-template>
-						<p></p>
-						<button type="button" class="btn btn-default center-block">
+					<img *ngIf="auteur.imagePath; else imageVide" src="http://localhost:8080/ProjetFormation/imageauteur/?imagePath={{auteur.imagePath}}"
+						width="125px" height="200px" class="rounded text-center center-block">
+					<ng-template #imageVide><img src="http://localhost:8080/ProjetFormation/imageauteur/?imagePath=imageVide.jpg" width="125px" height="200px" class="rounded text-center center-block"></ng-template>
+					<p></p>
+					<button type="button" class="btn btn-default center-block">
                             <a routerLink="/auteur/{{auteur.id}}" style="color:#ce934d"><span class="glyphicon glyphicon-info-sign"></span> Plus d'infos</a>
                         </button>
 				</div>

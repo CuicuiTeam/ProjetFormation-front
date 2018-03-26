@@ -1,7 +1,6 @@
 <app-header></app-header>
 <app-messages></app-messages>
 <div class="container">
-  <legend>Supprimer un livre </legend>
   <div class="row">
     <h2>Liste des livres</h2>
     <table class="table table-striped">
@@ -15,7 +14,7 @@
         <th>Actions</th>
       </tr>
 
-      <tr *ngFor="let livre of livres">
+      <tr *ngFor="let livre of listeLivres">
         <td>{{livre.titre}}</td>
         <td>{{livre.description}}</td>
         <td>{{livre.prix}}</td>
@@ -23,13 +22,10 @@
         <td>{{livre.popular}}</td>
         <td>{{livre.periodic}}</td>
         <td>
-          <form method="POST" action="/editlivre" style="display: inline;">
-            <input type="hidden" id="idLivre" name="idLivre" value="{{livre.id}}" />
-            <button type="submit" class="btn btn-primary">
-                            <span class="glyphicon glyphicon-pencil"></span>
+            <button type="button" (click)="modifLivre(livre.id)" class="btn btn-primary"><a routerLink="/admin/modiflivre/{{livre.id}}">
+                            <span class="glyphicon glyphicon-pencil" style="color:white"></span></a>
                         </button>
-          </form>
-          <button (click)="loadDel({{livre.id}})" class="btn btn-danger" data-toggle="modal" data-target="#modalDel">
+          <button onClick="loadDel(livre.id)" class="btn btn-danger" data-toggle="modal" data-target="#modalDel">
                             <span class="glyphicon glyphicon-trash"></span>
                         </button></td>
       </tr>

@@ -9,14 +9,16 @@ import { AjoutbibliothequeComponent } from './ajoutbibliotheque/ajoutbibliothequ
 import { ConnexionComponent } from './connexion/connexion.component';
 import { ModiflivreComponent } from './modiflivre/modiflivre.component';
 import { ModifmembreComponent } from './modifmembre/modifmembre.component';
-//import { GestionmembresComponent } from './gestionmembres/gestionmembres.component';
-//import { GestionlivresComponent } from './gestionlivres/gestionlivres.component';
+import { GestionmembresComponent } from './gestionmembres/gestionmembres.component';
+import { GestionlivresComponent } from './gestionlivres/gestionlivres.component';
 import { BibliothequesComponent } from './bibliotheques/bibliotheques.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { LivreComponent } from './livre/livre.component';
 import { CategorieComponent } from './categorie/categorie.component';
 import { PeriodiquesComponent } from './periodiques/periodiques.component';
 import { PanierComponent } from './panier/panier.component';
+import { GestionempruntsComponent } from './gestionemprunts/gestionemprunts.component';
+import { RechercheComponent } from './recherche/recherche.component';
 
 const routes: Routes = [
     { path: 'accueil', component: LivresComponent },
@@ -28,13 +30,15 @@ const routes: Routes = [
     { path: 'auteurs', component: AuteursComponent },
     { path: 'auteur/:id', component: AuteurComponent },
     { path: 'bibliotheques', component: BibliothequesComponent },
-    //{ path: 'admin/livres', component: GestionlivresComponent },
-    { path: 'admin/ajoutlivre', component: AjoutlivreComponent },
-    { path: 'admin/modiflivre', component: ModiflivreComponent },
-    //{ path: 'admin/membres', component: GestionmembresComponent },
+    { path: 'panier', component: PanierComponent },
+    { path: 'membre', component: GestionmembresComponent },    { path: 'admin/livres', component: GestionlivresComponent },    { path: 'admin/ajoutlivre', component: AjoutlivreComponent },
+    { path: 'admin/modiflivre/:id', component: ModiflivreComponent },
+    { path: 'admin/membres', component: GestionmembresComponent },
     { path: 'admin/inscription', component: InscriptionComponent },
     { path: 'admin/modifmembre', component: ModifmembreComponent },
+    { path: 'admin/emprunts', component: GestionempruntsComponent },
     { path: 'admin/ajoutbibliotheque', component: AjoutbibliothequeComponent },
+    { path: 'recherche/:recherche', component: RechercheComponent },
     { path: '', component: LivresComponent },
     { path: '**', component: PagenotfoundComponent }
 
