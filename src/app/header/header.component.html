@@ -1,7 +1,7 @@
-<div class="jumbotron" style="padding-bottom: 5px; background-image: url('http://localhost:8080/ProjetFormation/image/?imagePath=imagefond.jpg')">
+<div class="jumbotron" style="padding-bottom: 5px; background-image: url('http://localhost:8080/ProjetFormation/image/?imagePath=Ifond.jpg'); height: 195px">
+	
 	<div class="container">
-		<h2 style="color:#f1d08d">Bibliothèque Cuicui</h2>
-		<p style="color:#fbedd2">Pas seulement des livres sur les cuicui</p>
+		<div style="padding-top: 100px">
 		<form class="form-horizontal" method="POST" action="/recherche" class="pull-right">
 			<button type="submit" class="btn btn-info pull-right" style="font-size: 14px; background-color: #ce934d; border-color: #684529;">
 			<span class="glyphicon glyphicon-search"></span>
@@ -9,36 +9,16 @@
 			<input class="btn btn-default pull-right" placeholder="Recherche" id="motRecherche" name="motRecherche" style="width: 80%; color:#ac4a00; float: right"
 				autocomplete="off" />
 		</form>
-		<!--<div>
-			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" style="float: right">Recherche avancée</button>
-			<div id="demo" class="collapse">
-				<div class="container">
-					<form role="form">
-						<div class="form-group">
-							<label for="sel1">Auteur :</label>
-							<select class="form-control" id="sel1" style="width: 10%">
-								<option *ngFor="let edit of editeurs" value="1">{{edit.nom}}</option>
-							</select> <label for="sel2">Categorie :</label>
-							<select class="form-control" id="sel2" style="width: 10%">
-								<option>1</option>
-							</select>
-							<label for="sel3">Editeur :</label>
-							<select class="form-control" id="sel3" style="width: 10%">
-								<option>1</option>
-							</select>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>-->
 	</div>
+	</div>
+	
 </div>
 <div class="container">
 	<div class="row">
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a routerLink="/accueil" class="navbar-brand">Accueil</a>
+					<a routerLink="/accueil" class="navbar-brand"><span class="glyphicon glyphicon-home" style="font-size:1.1em"></span></a>
 				</div>
 				<ul class="nav navbar-nav">
 					<li><a routerLink="/auteurs">Auteurs</a></li>

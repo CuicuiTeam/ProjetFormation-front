@@ -2,11 +2,11 @@
 <app-messages></app-messages>
 <div class="row">
 	<div class="container">
-		<h1>{{titre}}</h1>
+		<h1 style="color:#aa5c1e">{{titre}}</h1>
 		<div *ngFor="let auteur of listeAuteurs" class="col-lg-4" style="padding-bottom: 30px">
 			<div class="caption">
 				<div class="panel panel-default" style="background-color: #e3e3e1; border-color: #999">
-					<h3 class="text-center">
+					<h3 class="text-center" style="color:#c58545">
 						<i>{{auteur.prenom}}</i> <b>{{auteur.nom}}</b>
 					</h3>
 					<img *ngIf="auteur.imagePath; else imageVide" src="http://localhost:8080/ProjetFormation/imageauteur/?imagePath={{auteur.imagePath}}" width="125px" height="200px" class="rounded text-center center-block">

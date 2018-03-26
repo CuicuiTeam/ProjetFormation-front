@@ -4,14 +4,16 @@
   <div class="row">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h1 style="text-align: center">{{livre.titre}}</h1>
-        <!--<p style="text-align:center"><b *ngFor="let auteur of livre.auteurs"><i>{{auteur.prenom}} {{auteur.nom}}</i></b></p>-->
+        <h1 style="text-align: center; color:#c58545">{{livre.titre}}</h1>
+        <p style="text-align:center"><b *ngFor="let auteur of livre.auteurs"><i>{{auteur.prenom}} {{auteur.nom}}</i></b></p>
       </div>
       <p></p>
       <p><img *ngIf="livre.imagePath; else imageVide" src="http://localhost:8080/ProjetFormation/image/?imagePath={{livre.imagePath}}" width="125px" height="175px" class="rounded text-center center-block">
                         <ng-template #imageVide><img src="http://localhost:8080/ProjetFormation/image/?imagePath=imageVide.jpg" width="125px" height="175px" class="rounded text-center center-block"></ng-template></p>
-      <h3>Resumé :</h3>
+      <div class="container-fluid">
+      <h3 style="color:#c58545">Resumé :</h3>
       <p>{{livre.description}}</p>
+       </div>
     </div>
     <div class="thumbnail">
       <!--<p><strong>editeur :</strong> {{livre.editeur.nom}}</p>
