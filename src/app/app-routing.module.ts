@@ -17,6 +17,7 @@ import { LivreComponent } from './livre/livre.component';
 import { CategorieComponent } from './categorie/categorie.component';
 import { PeriodiquesComponent } from './periodiques/periodiques.component';
 import { PanierComponent } from './panier/panier.component';
+import { GestionempruntsComponent } from './gestionemprunts/gestionemprunts.component';
 
 const routes: Routes = [
     { path: 'accueil', component: LivresComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
     //{ path: 'admin/membres', component: GestionmembresComponent },
     { path: 'admin/inscription', component: InscriptionComponent },
     { path: 'admin/modifmembre', component: ModifmembreComponent },
+    { path: 'admin/emprunts', component: GestionempruntsComponent },
     { path: 'admin/ajoutbibliotheque', component: AjoutbibliothequeComponent },
     { path: '', component: LivresComponent },
     { path: '**', component: PagenotfoundComponent }
