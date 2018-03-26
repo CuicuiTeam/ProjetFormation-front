@@ -2,12 +2,12 @@
 	<div class="container">
 		<h2 style="color:#f1d08d">Bibliothèque Cuicui</h2>
 		<p style="color:#fbedd2">Pas seulement des livres sur les cuicui</p>
-		<form class="form-horizontal" method="POST" action="/recherche" class="pull-right">
-			<button type="submit" class="btn btn-info pull-right" style="font-size: 14px; background-color: #ce934d; border-color: #684529;">
-			<span class="glyphicon glyphicon-search"></span>
-		</button>
-			<input class="btn btn-default pull-right" placeholder="Recherche" id="motRecherche" name="motRecherche" style="width: 80%; color:#ac4a00; float: right"
+		<form class="form-horizontal" method="GET" class="pull-right">
+			<input #motRecherche class="btn btn-default pull-right" placeholder="Recherche" id="motRecherche" name="motRecherche" style="width: 80%; color:#ac4a00; float: right"
 				autocomplete="off" />
+			<button type="submit" (click)="search(motRecherche.value)" class="btn btn-info pull-right" style="font-size: 14px; background-color: #ce934d; border-color: #684529;">
+				<span class="glyphicon glyphicon-search"></span>
+			</button>
 		</form>
 		<!--<div>
 			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" style="float: right">Recherche avancée</button>
@@ -46,13 +46,13 @@
 					<li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Catégories<span
 						class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a routerLink="/categorie/3" >Roman</a></li>
-							<li><a routerLink="/categorie/1" >Biographie</a></li>
-							<li><a routerLink="/categorie/2" >Jeunesse</a></li>
+							<li><a routerLink="/categorie/3">Roman</a></li>
+							<li><a routerLink="/categorie/1">Biographie</a></li>
+							<li><a routerLink="/categorie/2">Jeunesse</a></li>
 						</ul>
 					</li>
 
-					<li><a routerLink="/categorie/2" >Jeunesse</a></li>
+					<li><a routerLink="/categorie/2">Jeunesse</a></li>
 					<li><a routerLink="/periodiques">Périodiques</a></li>
 					<li><a routerLink="/bibliotheques">Bibliothèques</a></li>
 					<li *ngIf="user && user.admin">

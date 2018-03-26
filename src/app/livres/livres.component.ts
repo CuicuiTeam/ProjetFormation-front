@@ -40,7 +40,7 @@ export class LivresComponent implements OnInit {
   }
 
   livre() {
-    this.backService.Livres(this.listeLivres).subscribe(
+    this.backService.LivresRecommandes().subscribe(
       data => {
         this.backService.handleData(data);
         if (data.payload) {

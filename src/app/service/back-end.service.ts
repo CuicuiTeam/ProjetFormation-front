@@ -8,15 +8,15 @@ import { MembreVM } from '../model/MembreVM';
 import { PanierVM } from '../model/PanierVM'
 import { CategorieVM } from '../model/CategorieVM'
 import { BibliothequeVM } from '../model/BibliothequeVM';
-import { HttpHeaders,HttpErrorResponse } from '@angular/common/http';
+import { HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError, retry } from 'rxjs/operators';
 
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type':  'application/json'
-  }),withCredentials:true
+    'Content-Type': 'application/json'
+  }), withCredentials: true
 }
 
 
@@ -26,134 +26,137 @@ export class BackEndService {
   constructor(private http: HttpClient) { }
 
 
-  Login(identifiantsVm: IdentifiantsVM): Observable<any>
-  {
+  Login(identifiantsVm: IdentifiantsVM): Observable<any> {
     console.log(identifiantsVm);
     return this.http.post<IdentifiantsVM>("http://localhost:8080/ProjetFormation/connexion", identifiantsVm, httpOptions)
-    .pipe(      
+      .pipe(
       retry(3),
       catchError(this.handleError)
-    );
-  } 
+      );
+  }
 
-  Logout(): Observable<any>
-  {
+  Logout(): Observable<any> {
     return this.http.post<IdentifiantsVM>("http://localhost:8080/ProjetFormation/deconnexion", httpOptions)
-    .pipe(      
+      .pipe(
       retry(3),
       catchError(this.handleError)
-    );
-  } 
+      );
+  }
 
-   newMembre(membreVm: MembreVM): Observable<any>
-  {
+  newMembre(membreVm: MembreVM): Observable<any> {
     console.log(membreVm);
     return this.http.put<MembreVM>("http://localhost:8080/ProjetFormation/admin/membre", membreVm, httpOptions)
-    .pipe(      
+      .pipe(
       retry(3),
       catchError(this.handleError)
-    );
+      );
   }
 
-Bibliotheque(bibliothequeVm: BibliothequeVM[]): Observable<any>
-  {
+  Bibliotheque(bibliothequeVm: BibliothequeVM[]): Observable<any> {
     console.log(bibliothequeVm);
     return this.http.get<BibliothequeVM>("http://localhost:8080/ProjetFormation/admin/bibliotheque", httpOptions)
-    .pipe(      
+      .pipe(
       retry(3),
       catchError(this.handleError)
-    );
+      );
   }
 
- Livres(livreVm: LivreVM[]): Observable<any>
-  {
-    console.log(livreVm);
-    return this.http.get<LivreVM[]>("http://localhost:8080/ProjetFormation/livre/recommandes", httpOptions)
-    .pipe(      
+  Livres(): Observable<any> {
+    return this.http.get<LivreVM[]>("http://localhost:8080/ProjetFormation/livre", httpOptions)
+      .pipe(
       retry(3),
       catchError(this.handleError)
-    );
-  } 
+      );
+  }
 
-  LivresPeriodiques(livreVm: LivreVM[]): Observable<any>
-  {
+  LivresRecommandes(): Observable<any> {
+    return this.http.get<LivreVM[]>("http://localhost:8080/ProjetFormation/livre/recommandes", httpOptions)
+      .pipe(
+      retry(3),
+      catchError(this.handleError)
+      );
+  }
+
+  LivresPeriodiques(livreVm: LivreVM[]): Observable<any> {
     console.log(livreVm);
     return this.http.get<LivreVM[]>("http://localhost:8080/ProjetFormation/livre/periodiques", httpOptions)
-    .pipe(      
+      .pipe(
       retry(3),
       catchError(this.handleError)
-    );
-  } 
+      );
+  }
 
-  LivresCategorie(id): Observable<any>
-  {
+  LivresCategorie(id): Observable<any> {
     console.log(id);
     return this.http.get<CategorieVM>("http://localhost:8080/ProjetFormation/livre/categorie/" + id, httpOptions)
-    .pipe(      
+      .pipe(
       retry(3),
       catchError(this.handleError)
-    );
+      );
   }
 
-  Auteurs(auteurVm: AuteurVM[]): Observable<any>
-  {
+  Auteurs(auteurVm: AuteurVM[]): Observable<any> {
     console.log(auteurVm);
     return this.http.get<AuteurVM[]>("http://localhost:8080/ProjetFormation/auteur", httpOptions)
-    .pipe(      
+      .pipe(
       retry(3),
       catchError(this.handleError)
-    );
-  } 
+      );
+  }
 
-   OneAuteur(id): Observable<any>
-  {
+  OneAuteur(id): Observable<any> {
     console.log(id);
     return this.http.get<AuteurVM>("http://localhost:8080/ProjetFormation/auteur/" + id, httpOptions)
-    .pipe(      
+      .pipe(
       retry(3),
       catchError(this.handleError)
-    );
-  } 
+      );
+  }
 
-  OneLivre(id): Observable<any>
-  {
+  OneLivre(id): Observable<any> {
     console.log(id);
     return this.http.get<LivreVM>("http://localhost:8080/ProjetFormation/livre/" + id, httpOptions)
-    .pipe(      
+      .pipe(
       retry(3),
       catchError(this.handleError)
-    );
-  } 
+      );
+  }
 
-  
-AjoutLivre(livreVm: LivreVM): Observable<any>
-  {
+
+  AjoutLivre(livreVm: LivreVM): Observable<any> {
     console.log(livreVm);
     return this.http.put<LivreVM>("http://localhost:8080/ProjetFormation/livre", livreVm, httpOptions)
-    .pipe(
+      .pipe(
       retry(3),
       catchError(this.handleError)
-    );
+      );
   }
-  AjoutPanier(id:number):Observable<any>{
-    return this.http.post<PanierVM>("http://localhost:8080/ProjetFormation/panier/addbook?idLivre="+id,{httpOptions,withCredentials:true})
-    .pipe(
+  AjoutPanier(id: number): Observable<any> {
+    return this.http.post<PanierVM>("http://localhost:8080/ProjetFormation/panier/addbook?idLivre=" + id, { httpOptions, withCredentials: true })
+      .pipe(
       retry(3),
       catchError(this.handleError)
-    );
+      );
   }
 
-  AfficherPanier(): Observable<any>
-  {
-   
+  AfficherPanier(): Observable<any> {
+
     return this.http.get("http://localhost:8080/ProjetFormation/panier", httpOptions)
-    .pipe(
+      .pipe(
       retry(3),
       catchError(this.handleError)
-    );
+      );
   }
 
-    private handleError(error: HttpErrorResponse) {
+  Recherche(recherche: string): Observable<any> {
+    return this.http.get<LivreVM>("http://localhost:8080/ProjetFormation/recherche/" + recherche, httpOptions)
+      .pipe(
+        retry(3),
+        catchError(this.handleError)
+      );
+  }
+
+  private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred:', error.error.message);
@@ -167,17 +170,17 @@ AjoutLivre(livreVm: LivreVM): Observable<any>
     // return an ErrorObservable with a user-facing error message
     return new ErrorObservable(
       'Something bad happened; please try again later.');
-    };
+  };
 
-    handleData(data: any){      
-      if(data.success){
-        //resquest suceed in server
-        console.log(data.message);
-        //messageService.displaySucessfulMessage(data.message);
-      }else{
-        console.error(data.message);
-        //messageService.displayFailureMessage(data.message);
-      }
-
+  handleData(data: any) {
+    if (data.success) {
+      //resquest suceed in server
+      console.log(data.message);
+      //messageService.displaySucessfulMessage(data.message);
+    } else {
+      console.error(data.message);
+      //messageService.displayFailureMessage(data.message);
     }
+
+  }
 }
