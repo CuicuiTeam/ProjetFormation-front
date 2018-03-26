@@ -22,7 +22,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { LivreComponent } from './livre/livre.component';
 import { MessagesComponent } from './messages/messages.component';
 // import { GestionlivresComponent } from './gestionlivres/gestionlivres.component';
-// import { GestionmembresComponent } from './gestionmembres/gestionmembres.component';
+import { GestionmembresComponent } from './gestionmembres/gestionmembres.component';
 import { BackEndService } from './service/back-end.service';
 import { CustomInterceptor } from './service/CustomInterceptor.service';
 import { MessagesService } from './service/messages.service';
@@ -56,9 +56,9 @@ import { GestionempruntsComponent } from './gestionemprunts/gestionemprunts.comp
      PanierComponent,
      GestionempruntsComponent,
      PeriodiquesComponent,
-     CategorieComponent//,
+     CategorieComponent,
     // GestionlivresComponent,
-    // GestionmembresComponent
+    GestionmembresComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,8 @@ import { MessagesService } from '../service/messages.service';
 import { DatashareService } from '../service/datashare.service';
 import { Router } from '@angular/router';
 import { PanierVM } from '../model/PanierVM';
+import {LocalStorageService, LocalStorage} from 'ngx-webstorage';
+import { MembreVM } from '../model/MembreVM';
 
 @Component({
   selector: 'app-panier',
@@ -19,23 +21,28 @@ export class PanierComponent implements OnInit {
 
   // };
   contenu: any;
+  user : MembreVM;
   constructor(
      private backService: BackEndService,
     private messageService: MessagesService,
     private dss: DatashareService,
+    private storage: LocalStorageService,
     private router: Router) {this.panier();}
   
 
   ngOnInit() {
+    if (this.storage.retrieve('me')){
+      this.user = this.storage.retrieve('me');
+    }
   }
 
   panier(){
-
+    console.log("appel fonction panier");
     this.backService.AfficherPanier().subscribe(
       data => {
         this.backService.handleData(data);
         if (data.payload) {
-          console.log(data.payload);
+          console.log("payload => " + JSON.stringify(data.payload));
           //cache the logged member in datashare service
           this.contenu = data.payload;
 

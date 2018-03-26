@@ -9,7 +9,7 @@ import { AjoutbibliothequeComponent } from './ajoutbibliotheque/ajoutbibliothequ
 import { ConnexionComponent } from './connexion/connexion.component';
 import { ModiflivreComponent } from './modiflivre/modiflivre.component';
 import { ModifmembreComponent } from './modifmembre/modifmembre.component';
-//import { GestionmembresComponent } from './gestionmembres/gestionmembres.component';
+import { GestionmembresComponent } from './gestionmembres/gestionmembres.component';
 //import { GestionlivresComponent } from './gestionlivres/gestionlivres.component';
 import { BibliothequesComponent } from './bibliotheques/bibliotheques.component';
 import { InscriptionComponent } from './inscription/inscription.component';
@@ -28,10 +28,12 @@ const routes: Routes = [
     { path: 'auteurs', component: AuteursComponent },
     { path: 'auteur/:id', component: AuteurComponent },
     { path: 'bibliotheques', component: BibliothequesComponent },
+    { path: 'panier', component: PanierComponent },
+    { path: 'membre', component: GestionmembresComponent },
     //{ path: 'admin/livres', component: GestionlivresComponent },
     { path: 'admin/ajoutlivre', component: AjoutlivreComponent },
     { path: 'admin/modiflivre', component: ModiflivreComponent },
-    //{ path: 'admin/membres', component: GestionmembresComponent },
+    { path: 'admin/membres', component: GestionmembresComponent },
     { path: 'admin/inscription', component: InscriptionComponent },
     { path: 'admin/modifmembre', component: ModifmembreComponent },
     { path: 'admin/ajoutbibliotheque', component: AjoutbibliothequeComponent },

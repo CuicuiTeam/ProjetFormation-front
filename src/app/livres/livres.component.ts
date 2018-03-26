@@ -40,11 +40,11 @@ export class LivresComponent implements OnInit {
   }
 
   livre() {
+    console.log("appel fonction livre");
     this.backService.Livres(this.listeLivres).subscribe(
       data => {
         this.backService.handleData(data);
         if (data.payload) {
-          console.log(data.payload);
           //cache the logged member in datashare service
           this.listeLivres = data.payload;
           
@@ -61,7 +61,8 @@ export class LivresComponent implements OnInit {
 
  
 
-  ajoutpanier(id){
+  ajoutpanier(id) {
+    console.log("appel fonction ajoutpanier");
 
      this.backService.AjoutPanier(id).subscribe(
       data => {

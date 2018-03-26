@@ -95,6 +95,16 @@ Bibliotheque(bibliothequeVm: BibliothequeVM[]): Observable<any>
     );
   }
 
+  ListerMembre(membreVm: MembreVM[]): Observable<any>
+  {
+    console.log(membreVm);
+    return this.http.get<MembreVM[]>("http://localhost:8080/ProjetFormation/admin/membre", httpOptions)
+    .pipe(      
+      retry(3),
+      catchError(this.handleError)
+    );
+  }
+
   Auteurs(auteurVm: AuteurVM[]): Observable<any>
   {
     console.log(auteurVm);

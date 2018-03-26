@@ -1,7 +1,6 @@
 <app-header></app-header>
 <app-messages></app-messages>
 <div class="container">
-    <legend>Supprimer un membre</legend>
     <div class="row">
         <h2>Liste des membres</h2>
         <table class="table table-striped">
@@ -30,7 +29,7 @@
                             <span class="glyphicon glyphicon-pencil"></span>
                         </button>
                     </form>
-                    <button (click)="loadDel({{membre.id}})" class="btn btn-danger" data-toggle="modal" data-target="#modalDel">
+                    <button (click)="loadDel(membre.id)" class="btn btn-danger" data-toggle="modal" data-target="#modalDel">
                         <span class="glyphicon glyphicon-trash"></span>
                     </button></td>
             </tr>
