@@ -16,11 +16,11 @@
                         <img *ngIf="L.imagePath; else imageVide" src="http://localhost:8080/ProjetFormation/image/?imagePath={{L.imagePath}}" width="150px" height="200px" class="rounded text-center center-block">
                         <ng-template #imageVide><img src="http://localhost:8080/ProjetFormation/image/?imagePath=imageVide.jpg" width="150px" height="200px" class="rounded text-center center-block"></ng-template>
                         <p></p>
-                        <button type="button" class="btn btn-default">
-                            <a routerLink="/livre/{{L.id}}"><span class="glyphicon glyphicon-info-sign"></span> Plus d'infos</a>
+                        <button type="button" class="btn btn-default" >
+                            <a routerLink="/livre/{{L.id}}" style="color:#ce934d"><span class="glyphicon glyphicon-info-sign"></span> Plus d'infos</a>
                         </button>
                         <!--<label [(ngModel)]="id" name="L.id" >{{L.id}}</label>-->
-                        <button (click)="ajoutpanier(L.id)" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Ajout panier</button>
+                        <button (click)="ajoutpanier(L.id)" class="btn btn-primary" style="background-color: #ce934d; border-color: #bd7842;"><span class="glyphicon glyphicon-shopping-cart"></span> Ajout panier</button>
                     </div>
                 </div>
             </div>
