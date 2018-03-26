@@ -21,7 +21,7 @@ import { BibliothequesComponent } from './bibliotheques/bibliotheques.component'
 import { InscriptionComponent } from './inscription/inscription.component';
 import { LivreComponent } from './livre/livre.component';
 import { MessagesComponent } from './messages/messages.component';
-// import { GestionlivresComponent } from './gestionlivres/gestionlivres.component';
+import { GestionlivresComponent } from './gestionlivres/gestionlivres.component';
 import { GestionmembresComponent } from './gestionmembres/gestionmembres.component';
 import { BackEndService } from './service/back-end.service';
 import { CustomInterceptor } from './service/CustomInterceptor.service';
@@ -33,6 +33,7 @@ import { PeriodiquesComponent } from './periodiques/periodiques.component';
 import { CategorieComponent } from './categorie/categorie.component';
 import {LocalStorageService} from 'ngx-webstorage';
 import { GestionempruntsComponent } from './gestionemprunts/gestionemprunts.component';
+import { RechercheComponent } from './recherche/recherche.component';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { GestionempruntsComponent } from './gestionemprunts/gestionemprunts.comp
      GestionempruntsComponent,
      PeriodiquesComponent,
      CategorieComponent,
-    // GestionlivresComponent,
+     RechercheComponent,
+    GestionlivresComponent//,
     GestionmembresComponent
   ],
   imports: [
