@@ -22,7 +22,7 @@ export class AuteursComponent implements OnInit {
   ngOnInit() {
   }
 auteur() {
-    this.backService.Auteurs(this.listeAuteurs).subscribe(
+    this.backService.Auteurs().subscribe(
       data => {
         this.backService.handleData(data);
         if (data.payload) {
