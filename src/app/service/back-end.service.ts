@@ -115,6 +115,16 @@ export class BackEndService {
       );
   }
 
+  Categories(categorieVm: CategorieVM[]): Observable<any>
+  {
+    console.log(categorieVm);
+    return this.http.get<CategorieVM[]>("http://localhost:8080/ProjetFormation/categorie", httpOptions)
+      .pipe(
+      retry(3),
+      catchError(this.handleError)
+      );
+  }
+
   OneAuteur(id): Observable<any> {
     console.log(id);
     return this.http.get<AuteurVM>("http://localhost:8080/ProjetFormation/auteur/" + id, httpOptions)
