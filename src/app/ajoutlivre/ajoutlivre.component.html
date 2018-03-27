@@ -50,6 +50,14 @@
                 </div>
             </div>
             <div class="form-group">
+                <label class="control-label col-lg-2" for="auteurs">Auteurs</label>
+                <div class="col-lg-10">
+                    <select class="form-control" name="auteurs" id="auteurs" [(ngModel)]="livre.auteurs" multiple required>
+                        <option *ngFor="let auteur of listeAuteurs" [value]="auteur">{{auteur.prenom}} {{auteur.nom}}</option>
+                    </select> 
+                </div>
+            </div>
+            <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
                     <button (click)="ajoutLivre()" type="submit" class="btn btn-primary">Ajouter le livre</button>
                 </div>

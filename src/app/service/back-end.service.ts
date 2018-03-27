@@ -105,9 +105,8 @@ export class BackEndService {
     );
   }
 
-  Auteurs(auteurVm: AuteurVM[]): Observable<any>
+  Auteurs(): Observable<any>
   {
-    console.log(auteurVm);
     return this.http.get<AuteurVM[]>("http://localhost:8080/ProjetFormation/auteur", httpOptions)
       .pipe(
       retry(3),
@@ -145,7 +144,6 @@ export class BackEndService {
 
 
   AjoutLivre(livreVm: LivreVM): Observable<any> {
-    console.log(livreVm);
     return this.http.put<LivreVM>("http://localhost:8080/ProjetFormation/livre", livreVm, httpOptions)
       .pipe(
       retry(3),
