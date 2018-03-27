@@ -59,7 +59,7 @@ import { RechercheComponent } from './recherche/recherche.component';
      PeriodiquesComponent,
      CategorieComponent,
      RechercheComponent,
-    GestionlivresComponent//,
+    GestionlivresComponent,//,
     GestionmembresComponent
   ],
   imports: [
