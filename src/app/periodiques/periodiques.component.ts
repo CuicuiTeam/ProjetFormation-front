@@ -3,6 +3,7 @@ import { LivreVM } from '../model/LivreVM';
 import { BackEndService } from '../service/back-end.service';
 import { MessagesService } from '../service/messages.service';
 import { DatashareService } from '../service/datashare.service';
+import { BASE_URL } from '../app-constants';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./periodiques.component.css']
 })
 export class PeriodiquesComponent implements OnInit {
+  URL : string = BASE_URL;
 id:number;
   listeLivres: LivreVM[];
 

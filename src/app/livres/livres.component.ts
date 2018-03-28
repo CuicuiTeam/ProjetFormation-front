@@ -3,6 +3,7 @@ import { LivreVM } from '../model/LivreVM';
 import { BackEndService } from '../service/back-end.service';
 import { MessagesService } from '../service/messages.service';
 import { DatashareService } from '../service/datashare.service';
+import { BASE_URL } from '../app-constants';
 import { Router } from '@angular/router';
 
 @Component({
@@ -25,6 +26,7 @@ export class LivresComponent implements OnInit {
   //   auteursId:null
   // };
 
+  private URL:string = BASE_URL;
   id:number;
   listeLivres: LivreVM[];
  

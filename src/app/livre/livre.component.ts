@@ -4,6 +4,7 @@ import { BackEndService } from '../service/back-end.service';
 import { MessagesService } from '../service/messages.service';
 import { DatashareService } from '../service/datashare.service';
 import { Router } from '@angular/router';
+import { BASE_URL } from '../app-constants';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -12,6 +13,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./livre.component.css']
 })
 export class LivreComponent implements OnInit {
+  private URL:string = BASE_URL;
   livre: LivreVM;
   id: number;
 

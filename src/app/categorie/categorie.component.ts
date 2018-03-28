@@ -5,6 +5,7 @@ import { BackEndService } from '../service/back-end.service';
 import { MessagesService } from '../service/messages.service';
 import { DatashareService } from '../service/datashare.service';
 import { Router, Params, ActivatedRoute } from '@angular/router';
+import { BASE_URL } from '../app-constants';
 
 @Component({
   selector: 'app-categorie',
@@ -12,6 +13,7 @@ import { Router, Params, ActivatedRoute } from '@angular/router';
   styleUrls: ['./categorie.component.css']
 })
 export class CategorieComponent implements OnInit {
+  URL : string = BASE_URL;
   listeLivres: LivreVM[];
   id: number;
 
