@@ -4,7 +4,7 @@ import { BackEndService } from '../service/back-end.service';
 import { MessagesService } from '../service/messages.service';
 import { BASE_URL } from '../app-constants';
 import { Router } from '@angular/router';
-import {LocalStorageService, LocalStorage} from 'ngx-webstorage';
+import { LocalStorageService } from 'ngx-webstorage';
 
 @Component({
   selector: 'app-header',

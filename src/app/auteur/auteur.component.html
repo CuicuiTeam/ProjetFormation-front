@@ -36,7 +36,7 @@
                             <a routerLink="/livre/{{livre.id}}" style="color:#ce934d"><span class="glyphicon glyphicon-info-sign"></span> Plus d'informations</a>
                         </button>
 					<!--<label [(ngModel)]="id" name="L.id" >{{L.id}}</label>-->
-					<button (click)="ajoutpanier(livre.id)" class="btn btn-primary" style="background-color: #ce934d; border-color: #bd7842;"><span class="glyphicon glyphicon-shopping-cart"></span> Ajout panier</button>
+					<button *ngIf="user && !user.admin" (click)="ajoutpanier(livre.id)" class="btn btn-primary" style="background-color: #ce934d; border-color: #bd7842;"><span class="glyphicon glyphicon-shopping-cart"></span> Ajout panier</button>
 				</div>
 			</div>
 		</div>

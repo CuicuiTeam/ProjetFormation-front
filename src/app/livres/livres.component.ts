@@ -3,6 +3,8 @@ import { LivreVM } from '../model/LivreVM';
 import { BackEndService } from '../service/back-end.service';
 import { MessagesService } from '../service/messages.service';
 import { DatashareService } from '../service/datashare.service';
+import { LocalStorageService } from 'ngx-webstorage';
+import { MembreVM } from '../model/MembreVM';
 import { BASE_URL } from '../app-constants';
 import { Router } from '@angular/router';
 
@@ -29,16 +31,21 @@ export class LivresComponent implements OnInit {
   private URL:string = BASE_URL;
   id:number;
   listeLivres: LivreVM[];
+  user : MembreVM;
  
 
   constructor(
      private backService: BackEndService,
     private messageService: MessagesService,
     private dss: DatashareService,
-    private router: Router) {this.livre();}
+    private router: Router,
+    private storage: LocalStorageService) {this.livre();}
 
 
   ngOnInit() {
+    if (this.storage.retrieve('me')) {
+      this.user = this.storage.retrieve('me');
+    }
   }
 
   livre() {

@@ -22,6 +22,6 @@
       <p><strong>prix :</strong> {{livre.prix}} &euro;</p>
       <!--<p><strong>catégorie :</strong> {{livre.categorie.nom}}</p>-->
     </div>
-    <button (click)="ajoutpanier(livre.id)" class="btn btn-primary center-block" style="background-color: #ce934d; border-color: #bd7842;"><span class="glyphicon glyphicon-shopping-cart"></span> Ajout panier</button>
+    <button *ngIf="user && !user.admin" (click)="ajoutpanier(livre.id)" class="btn btn-primary center-block" style="background-color: #ce934d; border-color: #bd7842;"><span class="glyphicon glyphicon-shopping-cart"></span> Ajout panier</button>
   </div>
 </div>
