@@ -18,6 +18,7 @@ import { CategorieComponent } from './categorie/categorie.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { PeriodiquesComponent } from './periodiques/periodiques.component';
 import { PanierComponent } from './panier/panier.component';
+import { GestionbibliothequesComponent } from './gestionbibliotheques/gestionbibliotheques.component';
 import { GestionempruntsComponent } from './gestionemprunts/gestionemprunts.component';
 import { RechercheComponent } from './recherche/recherche.component';
 
@@ -33,12 +34,15 @@ const routes: Routes = [
     { path: 'auteur/:id', component: AuteurComponent },
     { path: 'bibliotheques', component: BibliothequesComponent },
     { path: 'panier', component: PanierComponent },
-    { path: 'membre', component: GestionmembresComponent },    { path: 'admin/livres', component: GestionlivresComponent },    { path: 'admin/ajoutlivre', component: AjoutlivreComponent },
+    { path: 'membre', component: GestionmembresComponent },    
+    { path: 'admin/livres', component: GestionlivresComponent },    
+    { path: 'admin/ajoutlivre', component: AjoutlivreComponent },
     { path: 'admin/modiflivre/:id', component: ModiflivreComponent },
     { path: 'admin/membres', component: GestionmembresComponent },
     { path: 'admin/inscription', component: InscriptionComponent },
     { path: 'admin/modifmembre', component: ModifmembreComponent },
     { path: 'admin/emprunts', component: GestionempruntsComponent },
+    { path: 'admin/bibliotheques', component: GestionbibliothequesComponent },
     { path: 'admin/ajoutbibliotheque', component: AjoutbibliothequeComponent },
     { path: 'recherche/:recherche', component: RechercheComponent },
     { path: '', component: LivresComponent },

@@ -35,6 +35,7 @@ import {LocalStorageService} from 'ngx-webstorage';
 import { GestionempruntsComponent } from './gestionemprunts/gestionemprunts.component';
 import { RechercheComponent } from './recherche/recherche.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { GestionbibliothequesComponent } from './gestionbibliotheques/gestionbibliotheques.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { CategoriesComponent } from './categories/categories.component';
      RechercheComponent,
     GestionlivresComponent,
     GestionmembresComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    GestionbibliothequesComponent
   ],
   imports: [
     BrowserModule,

@@ -2,27 +2,28 @@ import { Component, OnInit } from '@angular/core';
 import { BibliothequeVM } from '../model/BibliothequeVM';
 import { BackEndService } from '../service/back-end.service';
 import { MessagesService } from '../service/messages.service';
-import { DatashareService } from '../service/datashare.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-bibliotheques',
-  templateUrl: './bibliotheques.component.html',
-  styleUrls: ['./bibliotheques.component.css']
+  selector: 'app-gestionbibliotheques',
+  templateUrl: './gestionbibliotheques.component.html',
+  styleUrls: ['./gestionbibliotheques.component.css']
 })
-export class BibliothequesComponent implements OnInit {
-listeBibliotheques: BibliothequeVM[];
-    ;
+export class GestionbibliothequesComponent implements OnInit {
 
-  constructor(private backService: BackEndService,
+  listeBibliotheques : BibliothequeVM[];
+
+   constructor(
+    private backService: BackEndService,
     private messageService: MessagesService,
-    private dss: DatashareService,
-    private router: Router) {this.Bibliotheque(); }
+    private router: Router) {}
+
 
   ngOnInit() {
+    this.bibliotheques();
   }
 
-  Bibliotheque() {
+  bibliotheques() {
      this.backService.Bibliotheque().subscribe(
       data => {
         this.backService.handleData(data);
@@ -40,5 +41,4 @@ listeBibliotheques: BibliothequeVM[];
 
     );
   }
-
 }

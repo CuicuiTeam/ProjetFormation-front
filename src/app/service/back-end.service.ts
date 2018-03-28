@@ -55,8 +55,7 @@ export class BackEndService {
       );
   }
 
-  Bibliotheque(bibliothequeVm: BibliothequeVM[]): Observable<any> {
-    console.log(bibliothequeVm);
+  Bibliotheque(): Observable<any> {
     return this.http.get<BibliothequeVM>(this.url+"admin/bibliotheque", httpOptions)
       .pipe(
       retry(3),
@@ -90,7 +89,6 @@ export class BackEndService {
   }
 
   LivresCategorie(id): Observable<any> {
-    console.log(id);
     return this.http.get<CategorieVM>(this.url+"livre/categorie/" + id, httpOptions)
       .pipe(
       retry(3),

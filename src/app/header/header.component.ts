@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MembreVM } from '../model/MembreVM';
 import { BackEndService } from '../service/back-end.service';
 import { MessagesService } from '../service/messages.service';
+import { BASE_URL } from '../app-constants';
 import { Router } from '@angular/router';
 import {LocalStorageService, LocalStorage} from 'ngx-webstorage';
 
@@ -13,8 +14,7 @@ import {LocalStorageService, LocalStorage} from 'ngx-webstorage';
 export class HeaderComponent implements OnInit {
 
   user : MembreVM;
-  class = "alert-danger";
-  message = "Attention Michel";
+  private URL:string = BASE_URL;
 
   constructor(
     private backService: BackEndService,

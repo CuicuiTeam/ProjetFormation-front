@@ -26,6 +26,7 @@ export class CategorieComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       console.log(params);
       this.id = + this.route.snapshot.paramMap.get('id');
+      this.listeLivres = null;
       this.listeBycategorie();
     });
   }
@@ -37,8 +38,8 @@ export class CategorieComponent implements OnInit {
     this.backService.LivresCategorie(this.id).subscribe(
       data => {
         this.backService.handleData(data);
+        console.log(data.payload);
         if (data.payload) {
-          console.log(data.payload);
           //cache the logged member in datashare service
           this.listeLivres = data.payload;
 
