@@ -1,7 +1,7 @@
 <app-header></app-header>
 <app-messages></app-messages>
 <div class="container">
-    <div class="row">
+    <div *ngIf="listeLivres; else noBook" class="row">
         <div *ngFor="let L of listeLivres" class="col-md-3" style="padding-bottom: 15px">
             <div class="thumbnail" style="min-height: 540px">
                 <div class="caption">
@@ -16,7 +16,7 @@
                         <img *ngIf="L.imagePath; else imageVide" src="{{URL}}image/?imagePath={{L.imagePath}}" width="150px" height="200px" class="rounded text-center center-block">
                         <ng-template #imageVide><img src="{{URL}}image/?imagePath=imageVide.jpg" width="150px" height="200px" class="rounded text-center center-block"></ng-template>
                         <p></p>
-                        <button type="button" class="btn btn-default" >
+                        <button type="button" class="btn btn-default">
                             <a routerLink="/livre/{{L.id}}" style="color:#ce934d"><span class="glyphicon glyphicon-info-sign"></span> Plus d'infos</a>
                         </button>
                         <!--<label [(ngModel)]="id" name="L.id" >{{L.id}}</label>-->
@@ -26,4 +26,11 @@
             </div>
         </div>
     </div>
+    <ng-template #noBook>
+        <div class="row">
+            <div class="alert alert-info" role="alert">
+                Aucun livre n'est disponible pour cette catégorie
+            </div>
+        </div>
+    </ng-template>
 </div>

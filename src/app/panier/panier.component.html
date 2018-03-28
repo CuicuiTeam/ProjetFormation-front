@@ -2,14 +2,16 @@
 <app-messages></app-messages>
 <div class="container">
   <div *ngIf="!user" class="alert alert-warning" role="alert">
-  Veuillez vous connecter pour accéder au panier.
-</div>
+    Veuillez vous connecter pour accéder au panier.
+  </div>
   <div class="row" *ngIf="contenu">
     <div *ngFor="let livre of contenu.livres" class="col-md-3" style="padding-bottom: 15px">
       <div class="thumbnail" style="min-height:180px">
         <div class="caption">
-          <h3>{{livre.titre}}</h3>
-          <!--<h4>{{livre.description}}</h4>-->
+          <h3 style="color:#c58545">{{livre.titre}}</h3>
+          <p>
+            <b *ngFor="let auteur of livre.auteurs"><i>{{auteur.prenom}} {{auteur.nom}} </i></b>
+          </p>
           <p>{{livre.prix}}€</p>
           <p>{{livre.datePublication}}</p>
         </div>
