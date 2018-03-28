@@ -23,7 +23,7 @@ const httpOptions = {
 @Injectable()
 export class BackEndService {
 
-  url : string = "http://172.16.2.9:8080/ProjetFormation/"
+  url : string = "http://172.16.2.8:8080/ProjetFormation/"
 
   constructor(private http: HttpClient) { }
 

@@ -21,16 +21,16 @@
 		</div>
 	</div>
 	<div *ngFor="let livre of auteur.livres" class="col-lg-4" style="padding-bottom: 15px">
-		<div class="thumbnail" style="min-height: 695px; margin-bottom: 0px">
+		<div class="thumbnail" style="min-height: 540px; margin-bottom: 0px">
 			<div class="caption">
 				<h3 class="text-center" style="color:#c58545">{{livre.titre}}</h3>
-				<p style="width: 325px; max-height: 144px; overflow: hidden; text-overflow: ellipsis">{{livre.description}}</p>
+				<!--<p style="width: 325px; max-height: 144px; overflow: hidden; text-overflow: ellipsis">{{livre.description}}</p>-->
 				<p>Prix : {{livre.prix}}&euro;</p>
 				<p>Date de publication : {{livre.datePublication}}</p>
 				<div style="text-align: center; bottom: 25px; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;">
-					<img *ngIf="livre.imagePath; else imageVide" src="http://localhost:8080/ProjetFormation/image/?imagePath={{livre.imagePath}}"
+					<img *ngIf="livre.imagePath; else imageVide" src="http://172.16.2.8:8080/ProjetFormation/image/?imagePath={{livre.imagePath}}"
 						width="125px" height="175px" class="rounded text-center center-block">
-					<ng-template #imageVide><img src="http://localhost:8080/ProjetFormation/image/?imagePath=imageVide.jpg" width="125px" height="175px" class="rounded text-center center-block"></ng-template>
+					<ng-template #imageVide><img src="http://172.16.2.8:8080/ProjetFormation/image/?imagePath=imageVide.jpg" width="125px" height="175px" class="rounded text-center center-block"></ng-template>
 					<p></p>
 					<button type="button" class="btn btn-default">
                             <a routerLink="/livre/{{livre.id}}" style="color:#ce934d"><span class="glyphicon glyphicon-info-sign"></span> Plus d'informations</a>
