@@ -15,6 +15,7 @@ import { BibliothequesComponent } from './bibliotheques/bibliotheques.component'
 import { InscriptionComponent } from './inscription/inscription.component';
 import { LivreComponent } from './livre/livre.component';
 import { CategorieComponent } from './categorie/categorie.component';
+import { CategoriesComponent } from './categories/categories.component';
 import { PeriodiquesComponent } from './periodiques/periodiques.component';
 import { PanierComponent } from './panier/panier.component';
 import { GestionempruntsComponent } from './gestionemprunts/gestionemprunts.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
     { path: 'categorie/:id', component: CategorieComponent },
     { path: 'connexion', component: ConnexionComponent },
     { path: 'auteurs', component: AuteursComponent },
+    { path: 'categories', component: CategoriesComponent },
     { path: 'auteur/:id', component: AuteurComponent },
     { path: 'bibliotheques', component: BibliothequesComponent },
     { path: 'panier', component: PanierComponent },

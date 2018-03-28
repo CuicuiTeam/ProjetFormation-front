@@ -1,34 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { AuteurVM } from '../model/AuteurVM';
+import { CategorieVM } from '../model/CategorieVM';
 import { BackEndService } from '../service/back-end.service';
 import { MessagesService } from '../service/messages.service';
 import { DatashareService } from '../service/datashare.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-auteurs',
-  templateUrl: './auteurs.component.html',
-  styleUrls: ['./auteurs.component.css']
+  selector: 'app-categories',
+  templateUrl: './categories.component.html',
+  styleUrls: ['./categories.component.css']
 })
-export class AuteursComponent implements OnInit {
-  listeAuteurs: AuteurVM[];
-  titre = "Liste des auteurs";
+export class CategoriesComponent implements OnInit {
+  listeCategories: CategorieVM[];
+  titre = "Liste des categories";
 
   constructor(private backService: BackEndService,
     private messageService: MessagesService,
     private dss: DatashareService,
-    private router: Router) {this.auteur();}
+    private router: Router) {this.categorie(); }
 
   ngOnInit() {
   }
-auteur() {
-    this.backService.Auteurs().subscribe(
+
+  categorie() {
+    this.backService.Categories(this.listeCategories).subscribe(
       data => {
         this.backService.handleData(data);
         if (data.payload) {
           console.log(data.payload);
           //cache the logged member in datashare service
-          this.listeAuteurs = data.payload;
+          this.listeCategories = data.payload;
           
         }
       },

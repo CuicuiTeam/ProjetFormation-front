@@ -1,0 +1,20 @@
+<app-header></app-header>
+<app-messages></app-messages>
+<div class="container">
+	<div class="row">
+		<h1 style="color:#aa5c1e">{{titre}}</h1>
+		<div *ngFor="let categorie of listeCategories" class="col-lg-4" style="padding-bottom: 30px">
+			<div class="caption">
+				<div class="panel panel-default" style="background-color: #e3e3e1; border-color: #999; height: 126px">
+					<h3 class="text-center" >
+						<b style="color:#c58545">{{categorie.nom}}</b>
+           				 <p style="font-size:medium">{{categorie.description}}</p>
+					</h3>
+					<button type="button" class="btn btn-default center-block">
+                            <a routerLink="/categorie/{{categorie.id}}" style="color:#ce934d"><span class="glyphicon glyphicon-info-sign"></span> Voir tous les livres</a>
+                        </button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

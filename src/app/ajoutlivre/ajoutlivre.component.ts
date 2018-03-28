@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LivreVM } from '../model/LivreVM';
+import { AuteurVM } from '../model/AuteurVM';
 import { BackEndService } from '../service/back-end.service';
 import { MessagesService } from '../service/messages.service';
 import { DatashareService } from '../service/datashare.service';
@@ -26,6 +27,8 @@ export class AjoutlivreComponent implements OnInit {
     id: null
   };
 
+  listeAuteurs : AuteurVM[];
+
   constructor(
     private backService: BackEndService,
     private messageService: MessagesService,
@@ -33,16 +36,29 @@ export class AjoutlivreComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
+    this.getAuteurs();
   }
 
   ajoutLivre(){
     this.backService.AjoutLivre(this.livre).subscribe(
       data => {
         this.backService.handleData(data);
-        console.log(data.payload);
         if(data.payload) {
-          console.log(data.payload);
           this.router.navigate(['/accueil']);
+        }
+      },
+      error => {
+        console.error(error.message);
+      }
+    );
+  }
+
+  getAuteurs(){
+    this.backService.Auteurs().subscribe(
+      data => {
+        this.backService.handleData(data);
+        if(data.payload) {
+          this.listeAuteurs = data.payload;
         }
       },
       error => {
