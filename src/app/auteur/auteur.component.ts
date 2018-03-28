@@ -4,6 +4,7 @@ import { BackEndService } from '../service/back-end.service';
 import { MessagesService } from '../service/messages.service';
 import { DatashareService } from '../service/datashare.service';
 import { Router } from '@angular/router';
+import { BASE_URL } from '../app-constants';
 import { ActivatedRoute } from '@angular/router';
 
 
@@ -13,6 +14,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./auteur.component.css']
 })
 export class AuteurComponent implements OnInit {
+  private URL:string = BASE_URL;
   auteur: AuteurVM;
   id: number;
 

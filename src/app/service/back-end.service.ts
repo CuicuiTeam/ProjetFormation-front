@@ -9,6 +9,7 @@ import { PanierVM } from '../model/PanierVM'
 import { CategorieVM } from '../model/CategorieVM'
 import { BibliothequeVM } from '../model/BibliothequeVM';
 import { HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { BASE_URL } from '../app-constants';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError, retry } from 'rxjs/operators';
 
@@ -23,7 +24,7 @@ const httpOptions = {
 @Injectable()
 export class BackEndService {
 
-  url : string = "http://172.16.2.8:8080/ProjetFormation/"
+  url : string = BASE_URL;
 
   constructor(private http: HttpClient) { }
 

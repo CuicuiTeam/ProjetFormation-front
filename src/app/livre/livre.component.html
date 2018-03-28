@@ -8,8 +8,8 @@
         <p style="text-align:center"><b *ngFor="let auteur of livre.auteurs"><i>{{auteur.prenom}} {{auteur.nom}}</i></b></p>
       </div>
       <p></p>
-      <p><img *ngIf="livre.imagePath; else imageVide" src="http://172.16.2.8:8080/ProjetFormation/image/?imagePath={{livre.imagePath}}" width="125px" height="175px" class="rounded text-center center-block">
-                        <ng-template #imageVide><img src="http://172.16.2.8:8080/ProjetFormation/image/?imagePath=imageVide.jpg" width="125px" height="175px" class="rounded text-center center-block"></ng-template></p>
+      <p><img *ngIf="livre.imagePath; else imageVide" src="{{URL}}image/?imagePath={{livre.imagePath}}" width="125px" height="175px" class="rounded text-center center-block">
+                        <ng-template #imageVide><img src="{{URL}}image/?imagePath=imageVide.jpg" width="125px" height="175px" class="rounded text-center center-block"></ng-template></p>
       <div class="container-fluid">
       <h3 style="color:#c58545">Resumé :</h3>
       <p>{{livre.description}}</p>
