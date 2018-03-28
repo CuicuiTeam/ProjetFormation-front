@@ -23,7 +23,7 @@
         <ng-template #notPopular><td>Non</td></ng-template>
         <td *ngIf="livre.periodic; else notPeriodic">Oui</td>
         <ng-template #notPeriodic><td>Non</td></ng-template>
-        <td>
+        <td style="white-space:nowrap">
             <button type="button" (click)="modifLivre(livre.id)" class="btn btn-primary"><a routerLink="/admin/modiflivre/{{livre.id}}">
                             <span class="glyphicon glyphicon-pencil" style="color:white"></span></a>
                         </button>

@@ -42,4 +42,15 @@ export class ModiflivreComponent implements OnInit {
     );
 
   }
+
+  modifLivre(){
+    this.backService.ModifLivre(this.livre).subscribe(
+      data => {
+        this.backService.handleData(data);
+      },
+      error => {
+        console.log(error.message);
+      }
+    )
+  }
 }

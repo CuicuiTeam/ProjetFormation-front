@@ -12,6 +12,7 @@
                 <th>Ville</th>
                 <th>Code Postal</th>
                 <th>Telephone</th>
+                <th>Admin</th>
                 <th>Actions</th>
             </tr>
             <tr *ngFor="let membre of membres">
@@ -22,6 +23,10 @@
                 <td>{{membre.ville}}</td>
                 <td>{{membre.codePostal}}</td>
                 <td>{{membre.telephone}}</td>
+                <td *ngIf="membre.admin; else notAdmin">Oui</td>
+                <ng-template #notAdmin>
+                    <td>Non</td>
+                </ng-template>
                 <td>
                     <form method="GET" action="/editmembre" style="display: inline;">
                         <input type="hidden" id="idMembre" name="idMembre" value="{{membre.id}}" />

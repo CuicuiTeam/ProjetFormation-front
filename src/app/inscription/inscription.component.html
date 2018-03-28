@@ -12,59 +12,59 @@
             <fieldset>
                 <legend>Créez un nouveau compte</legend>
                 <div class="form-group">
-                    <label class="control-label col-lg-2" for="email">Email*</label>
-                    <div class="col-lg-10">
+                    <label class="control-label col-lg-4" for="email">Email*</label>
+                    <div class="col-lg-8">
                         <input id="email" name="email" type="email" required="required" [(ngModel)]="membre.email" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-lg-2" for="mdp">Mot de passe*</label>
-                    <div class="col-lg-10">
+                    <label class="control-label col-lg-4" for="mdp">Mot de passe*</label>
+                    <div class="col-lg-8">
                         <input id="mdp" name="password" type="password" required="required" [(ngModel)]="membre.password" class="form-control" />
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-lg-2" for="nom">Nom</label>
-                    <div class="col-lg-10">
+                    <label class="control-label col-lg-4" for="nom">Nom</label>
+                    <div class="col-lg-8">
                         <input id="nom" name="nom" type="text" [(ngModel)]="membre.nom" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-lg-2" for="prenom">Prenom</label>
-                    <div class="col-lg-10">
+                    <label class="control-label col-lg-4" for="prenom">Prenom</label>
+                    <div class="col-lg-8">
                         <input id="prenom" name="prenom" type="text" [(ngModel)]="membre.prenom" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-lg-2" for="adresse">Adresse</label>
-                    <div class="col-lg-10">
+                    <label class="control-label col-lg-4" for="adresse">Adresse</label>
+                    <div class="col-lg-8">
                         <input id="adresse" name="adresse" type="text" [(ngModel)]="membre.adresse" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-lg-2" for="ville">Ville</label>
-                    <div class="col-lg-10">
+                    <label class="control-label col-lg-4" for="ville">Ville</label>
+                    <div class="col-lg-8">
                         <input id="ville" name="ville" type="text" [(ngModel)]="membre.ville" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-lg-2" for="codePostal">Code
+                    <label class="control-label col-lg-4" for="codePostal">Code
                 Postal</label>
-                    <div class="col-lg-10">
+                    <div class="col-lg-8">
                         <input id="codePostal" name="codePostal" type="text" [(ngModel)]="membre.codePostal" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-lg-2" for="telephone">Telephone</label>
-                    <div class="col-lg-10">
+                    <label class="control-label col-lg-4" for="telephone">Telephone</label>
+                    <div class="col-lg-8">
                         <input id="telephone" name="telephone" type="text" [(ngModel)]="membre.telephone" class="form-control" />
                     </div>
                 </div>
 
                 <!--<div class="form-group">
-                    <label class="control-label col-lg-2" for="admin">Bibliotheque</label>
-                    <div class="col-lg-10">
+                    <label class="control-label col-lg-4" for="admin">Bibliotheque</label>
+                    <div class="col-lg-8">
                         <select ng-options="1">
                         <option value="">Sélectionnez une bibliotheque</option>
                     </select>
@@ -73,17 +73,18 @@
 
 
                 <div class="form-group">
-                    <label class="control-label col-lg-2" for="admin">Administrateur</label>
-                    <div class="col-lg-10">
-                        <input type="checkbox" id="admin" name="admin" [(ngModel)]="membre.admin"/>
+                    <label class="control-label col-lg-4" for="admin">Administrateur</label>
+                    <div class="col-lg-8">
+                        <input type="checkbox" id="admin" name="admin" [(ngModel)]="membre.admin" class="form-control-static"/>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-lg-10 col-lg-offset-2">
-                        <button (click)="newMembre()" type="submit" id="btnAdd" class="btn btn-primary">Créer</button>
+                <div class="form-group row">
+                    <i class="col-lg-4">*: Champs obligatoires</i>
+                    <div class="col-lg-8">
+                        <button (click)="newMembre()" type="submit" id="btnAdd" class="btn btn-primary pull-right">Créer</button>
                     </div>
                 </div>
-                <i>*: Champs obligatoires</i>
+                
             </fieldset>
         </form>
     </div>

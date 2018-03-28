@@ -152,6 +152,15 @@ export class BackEndService {
       catchError(this.handleError)
       );
   }
+
+  ModifLivre(livreVm: LivreVM): Observable<any> {
+    return this.http.post<LivreVM>(this.url+"livre", livreVm, httpOptions)
+      .pipe(
+      retry(3),
+      catchError(this.handleError)
+      );
+  }
+
   AjoutPanier(id: number): Observable<any> {
     return this.http.post<PanierVM>(this.url+"panier/addbook?idLivre=" + id, { httpOptions, withCredentials: true })
       .pipe(

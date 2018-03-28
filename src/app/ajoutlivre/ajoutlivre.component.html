@@ -1,65 +1,65 @@
 <app-header></app-header>
 <app-messages></app-messages>
 <div class="container">
-    <form class="form-horizontal">
+    <form class="form-horizontal col-md-6 col-md-offset-3">
         <fieldset>
             <legend>Ajouter un livre</legend>
             <div class="form-group">
-                <label class="control-label col-lg-2" for="titre">Titre</label>
-                <div class="col-lg-10">
+                <label class="control-label col-lg-4" for="titre">Titre</label>
+                <div class="col-lg-8">
                     <input id="titre" type="text" [(ngModel)]="livre.titre" required="required" class="form-control" name="titre" />
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-lg-2" for="description">Description</label>
-                <div class="col-lg-10">
+                <label class="control-label col-lg-4" for="description">Description</label>
+                <div class="col-lg-8">
                     <input id="description" type="text" [(ngModel)]="livre.description" required="required" class="form-control" name="description"
                     />
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-lg-2" for="prix">Prix</label>
-                <div class="col-lg-10">
+                <label class="control-label col-lg-4" for="prix">Prix</label>
+                <div class="col-lg-8">
                     <input id="prix" type="text" [(ngModel)]="livre.prix" class="form-control" name="prix" />
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-lg-2" for="date">Date de
+                <label class="control-label col-lg-4" for="date">Date de
                 publication</label>
-                <div class="col-lg-10">
+                <div class="col-lg-8">
                     <input id="date" type="date" [(ngModel)]="livre.datePublication" required="required" class="form-control" name="datePublication"
                     />
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-lg-2" for="image">Image</label>
-                <div class="col-lg-10">
+                <label class="control-label col-lg-4" for="image">Image</label>
+                <div class="col-lg-8">
                     <input id="image" type="text" [(ngModel)]="livre.imagePath" class="form-control" name="imagePath" />
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-lg-2" for="populaire">Recommande</label>
-                <div class="col-lg-10">
+                <label class="control-label col-lg-4" for="populaire">Recommande</label>
+                <div class="col-lg-8">
                     <input type="checkbox" [(ngModel)]="livre.popular" id="populaire" name="isPopular" />
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-lg-2" for="periodique">Periodique</label>
-                <div class="col-lg-10">
+                <label class="control-label col-lg-4" for="periodique">Periodique</label>
+                <div class="col-lg-8">
                     <input type="checkbox" [(ngModel)]="livre.periodic" id="periodique" name="isPeriodic" />
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-lg-2" for="auteurs">Auteurs</label>
-                <div class="col-lg-10">
+                <label class="control-label col-lg-4" for="auteurs">Auteurs</label>
+                <div class="col-lg-8">
                     <select class="form-control" name="auteurs" id="auteurs" [(ngModel)]="livre.auteurs" multiple required>
                         <option *ngFor="let auteur of listeAuteurs" [value]="auteur">{{auteur.prenom}} {{auteur.nom}}</option>
                     </select> 
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-2">
-                    <button (click)="ajoutLivre()" type="submit" class="btn btn-primary">Ajouter le livre</button>
+                <div class="col-lg-8 col-lg-offset-4">
+                    <button (click)="ajoutLivre()" type="submit" class="btn btn-primary pull-right">Ajouter le livre</button>
                 </div>
             </div>
         </fieldset>
