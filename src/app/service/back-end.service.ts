@@ -23,12 +23,14 @@ const httpOptions = {
 @Injectable()
 export class BackEndService {
 
+  url : string = "http://172.16.2.8:8080/ProjetFormation/"
+
   constructor(private http: HttpClient) { }
 
 
   Login(identifiantsVm: IdentifiantsVM): Observable<any> {
     console.log(identifiantsVm);
-    return this.http.post<IdentifiantsVM>("http://localhost:8080/ProjetFormation/connexion", identifiantsVm, httpOptions)
+    return this.http.post<IdentifiantsVM>(this.url+"connexion", identifiantsVm, httpOptions)
       .pipe(
       retry(3),
       catchError(this.handleError)
@@ -36,7 +38,7 @@ export class BackEndService {
   }
 
   Logout(): Observable<any> {
-    return this.http.post<IdentifiantsVM>("http://localhost:8080/ProjetFormation/deconnexion", httpOptions)
+    return this.http.post<IdentifiantsVM>(this.url+"deconnexion", httpOptions)
       .pipe(
       retry(3),
       catchError(this.handleError)
@@ -45,7 +47,7 @@ export class BackEndService {
 
   newMembre(membreVm: MembreVM): Observable<any> {
     console.log(membreVm);
-    return this.http.put<MembreVM>("http://localhost:8080/ProjetFormation/admin/membre", membreVm, httpOptions)
+    return this.http.put<MembreVM>(this.url+"admin/membre", membreVm, httpOptions)
       .pipe(
       retry(3),
       catchError(this.handleError)
@@ -54,7 +56,7 @@ export class BackEndService {
 
   Bibliotheque(bibliothequeVm: BibliothequeVM[]): Observable<any> {
     console.log(bibliothequeVm);
-    return this.http.get<BibliothequeVM>("http://localhost:8080/ProjetFormation/admin/bibliotheque", httpOptions)
+    return this.http.get<BibliothequeVM>(this.url+"admin/bibliotheque", httpOptions)
       .pipe(
       retry(3),
       catchError(this.handleError)
@@ -62,7 +64,7 @@ export class BackEndService {
   }
 
   Livres(): Observable<any> {
-    return this.http.get<LivreVM[]>("http://localhost:8080/ProjetFormation/livre", httpOptions)
+    return this.http.get<LivreVM[]>(this.url+"livre", httpOptions)
       .pipe(
       retry(3),
       catchError(this.handleError)
@@ -70,7 +72,7 @@ export class BackEndService {
   }
 
   LivresRecommandes(): Observable<any> {
-    return this.http.get<LivreVM[]>("http://localhost:8080/ProjetFormation/livre/recommandes", httpOptions)
+    return this.http.get<LivreVM[]>(this.url+"livre/recommandes", httpOptions)
       .pipe(
       retry(3),
       catchError(this.handleError)
@@ -79,7 +81,7 @@ export class BackEndService {
 
   LivresPeriodiques(livreVm: LivreVM[]): Observable<any> {
     console.log(livreVm);
-    return this.http.get<LivreVM[]>("http://localhost:8080/ProjetFormation/livre/periodiques", httpOptions)
+    return this.http.get<LivreVM[]>(this.url+"livre/periodiques", httpOptions)
       .pipe(
       retry(3),
       catchError(this.handleError)
@@ -88,7 +90,7 @@ export class BackEndService {
 
   LivresCategorie(id): Observable<any> {
     console.log(id);
-    return this.http.get<CategorieVM>("http://localhost:8080/ProjetFormation/livre/categorie/" + id, httpOptions)
+    return this.http.get<CategorieVM>(this.url+"livre/categorie/" + id, httpOptions)
       .pipe(
       retry(3),
       catchError(this.handleError)
@@ -98,7 +100,7 @@ export class BackEndService {
   ListerMembre(membreVm: MembreVM[]): Observable<any>
   {
     console.log(membreVm);
-    return this.http.get<MembreVM[]>("http://localhost:8080/ProjetFormation/admin/membre", httpOptions)
+    return this.http.get<MembreVM[]>(this.url+"admin/membre", httpOptions)
     .pipe(      
       retry(3),
       catchError(this.handleError)
@@ -107,7 +109,7 @@ export class BackEndService {
 
   Auteurs(): Observable<any>
   {
-    return this.http.get<AuteurVM[]>("http://localhost:8080/ProjetFormation/auteur", httpOptions)
+    return this.http.get<AuteurVM[]>(this.url+"auteur", httpOptions)
       .pipe(
       retry(3),
       catchError(this.handleError)
@@ -117,7 +119,7 @@ export class BackEndService {
   Categories(categorieVm: CategorieVM[]): Observable<any>
   {
     console.log(categorieVm);
-    return this.http.get<CategorieVM[]>("http://localhost:8080/ProjetFormation/categorie", httpOptions)
+    return this.http.get<CategorieVM[]>(this.url+"categorie", httpOptions)
       .pipe(
       retry(3),
       catchError(this.handleError)
@@ -126,7 +128,7 @@ export class BackEndService {
 
   OneAuteur(id): Observable<any> {
     console.log(id);
-    return this.http.get<AuteurVM>("http://localhost:8080/ProjetFormation/auteur/" + id, httpOptions)
+    return this.http.get<AuteurVM>(this.url+"auteur/" + id, httpOptions)
       .pipe(
       retry(3),
       catchError(this.handleError)
@@ -135,7 +137,7 @@ export class BackEndService {
 
   OneLivre(id): Observable<any> {
     console.log(id);
-    return this.http.get<LivreVM>("http://localhost:8080/ProjetFormation/livre/" + id, httpOptions)
+    return this.http.get<LivreVM>(this.url+"livre/" + id, httpOptions)
       .pipe(
       retry(3),
       catchError(this.handleError)
@@ -144,14 +146,14 @@ export class BackEndService {
 
 
   AjoutLivre(livreVm: LivreVM): Observable<any> {
-    return this.http.put<LivreVM>("http://localhost:8080/ProjetFormation/livre", livreVm, httpOptions)
+    return this.http.put<LivreVM>(this.url+"livre", livreVm, httpOptions)
       .pipe(
       retry(3),
       catchError(this.handleError)
       );
   }
   AjoutPanier(id: number): Observable<any> {
-    return this.http.post<PanierVM>("http://localhost:8080/ProjetFormation/panier/addbook?idLivre=" + id, { httpOptions, withCredentials: true })
+    return this.http.post<PanierVM>(this.url+"panier/addbook?idLivre=" + id, { httpOptions, withCredentials: true })
       .pipe(
       retry(3),
       catchError(this.handleError)
@@ -160,7 +162,7 @@ export class BackEndService {
 
   AfficherPanier(): Observable<any> {
 
-    return this.http.get("http://localhost:8080/ProjetFormation/panier", httpOptions)
+    return this.http.get(this.url+"panier", httpOptions)
       .pipe(
       retry(3),
       catchError(this.handleError)
@@ -168,7 +170,7 @@ export class BackEndService {
   }
 
   Recherche(recherche: string): Observable<any> {
-    return this.http.get<LivreVM>("http://localhost:8080/ProjetFormation/recherche/" + recherche, httpOptions)
+    return this.http.get<LivreVM>(this.url+"recherche/" + recherche, httpOptions)
       .pipe(
         retry(3),
         catchError(this.handleError)

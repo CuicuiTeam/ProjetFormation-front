@@ -3,18 +3,18 @@
 <div class="container">
     <div class="row">
         <div *ngFor="let L of listeLivres" class="col-md-3" style="padding-bottom: 15px">
-            <div class="thumbnail" style="min-height: 564px">
+            <div class="thumbnail" style="min-height: 540px">
                 <div class="caption">
                     <h3 class="text-center" style="color:#c58545">{{L.titre}}</h3>
                     <p class="text-center">
                         <b *ngFor="let auteur of L.auteurs"><i>{{auteur.prenom}} {{auteur.nom}}</i></b>
                     </p>
-                    <p style="width: 250px; max-height: 144px; overflow-y: hidden; text-overflow-y: ellipsis">{{L.description}}</p>
+                    <!--<p style="width: 250px; max-height: 144px; overflow-y: hidden; text-overflow-y: ellipsis">{{L.description}}</p>-->
                     <p>Prix: {{L.prix}}&euro;</p>
                     <p>Date de publication: {{L.datePublication}}</p>
                     <div style="text-align: center; bottom: 55px; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;">
-                        <img *ngIf="L.imagePath; else imageVide" src="http://localhost:8080/ProjetFormation/image/?imagePath={{L.imagePath}}" width="150px" height="200px" class="rounded text-center center-block">
-                        <ng-template #imageVide><img src="http://localhost:8080/ProjetFormation/image/?imagePath=imageVide.jpg" width="150px" height="200px" class="rounded text-center center-block"></ng-template>
+                        <img *ngIf="L.imagePath; else imageVide" src="http://172.16.2.8:8080/ProjetFormation/image/?imagePath={{L.imagePath}}" width="150px" height="200px" class="rounded text-center center-block">
+                        <ng-template #imageVide><img src="http://172.16.2.8:8080/ProjetFormation/image/?imagePath=imageVide.jpg" width="150px" height="200px" class="rounded text-center center-block"></ng-template>
                         <p></p>
                         <button type="button" class="btn btn-default" >
                             <a routerLink="/livre/{{L.id}}" style="color:#ce934d"><span class="glyphicon glyphicon-info-sign"></span> Plus d'infos</a>
