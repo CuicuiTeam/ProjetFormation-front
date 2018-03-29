@@ -14,7 +14,7 @@
                 <div class="form-group">
                     <label class="control-label col-lg-4" for="email">Email*</label>
                     <div class="col-lg-8">
-                        <input id="email" name="email" type="email" required="required" [(ngModel)]="membre.email" class="form-control" />
+                        <input id="email" name="email" type="email" required="required" [(ngModel)]="membre.email" class="form-control" email/>
                     </div>
                 </div>
                 <div class="form-group">
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-lg-4" for="prenom">Prenom</label>
+                    <label class="control-label col-lg-4" for="prenom">Prénom</label>
                     <div class="col-lg-8">
                         <input id="prenom" name="prenom" type="text" [(ngModel)]="membre.prenom" class="form-control" />
                     </div>
@@ -49,14 +49,13 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-lg-4" for="codePostal">Code
-                Postal</label>
+                    <label class="control-label col-lg-4" for="codePostal">Code Postal</label>
                     <div class="col-lg-8">
                         <input id="codePostal" name="codePostal" type="text" [(ngModel)]="membre.codePostal" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-lg-4" for="telephone">Telephone</label>
+                    <label class="control-label col-lg-4" for="telephone">Téléphone</label>
                     <div class="col-lg-8">
                         <input id="telephone" name="telephone" type="text" [(ngModel)]="membre.telephone" class="form-control" />
                     </div>
@@ -70,8 +69,6 @@
                     </select>
                     </div>
                 </div>-->
-
-
                 <div class="form-group">
                     <label class="control-label col-lg-4" for="admin">Administrateur</label>
                     <div class="col-lg-8">

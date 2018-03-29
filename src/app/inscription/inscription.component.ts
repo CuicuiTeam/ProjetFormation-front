@@ -39,7 +39,6 @@ membre: MembreVM = {
         this.backService.handleData(data);
         if (data.payload) {
           console.log(data.payload);
-          //navigate to home and display navbar or the hidden tabs
           this.router.navigate(['/admin/membres']);
           
         }
