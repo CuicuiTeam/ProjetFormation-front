@@ -1,1 +1,1 @@
-export const BASE_URL:string = "http://172.16.2.9:8080/ProjetFormation/";
+export const BASE_URL:string = "http://172.16.2.8:8080/ProjetFormation/";

@@ -40,7 +40,7 @@ membre: MembreVM = {
         if (data.payload) {
           console.log(data.payload);
           //navigate to home and display navbar or the hidden tabs
-          this.router.navigate(['/accueil']);
+          this.router.navigate(['/admin/membres']);
           
         }
       },
